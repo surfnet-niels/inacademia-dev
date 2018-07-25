@@ -1,0 +1,4 @@
+172.172.172.1   svs.inacademia.local
+172.172.172.2   op.inacademia.local
+172.172.172.100 rp.inacademia.local                  
+172.172.172.200  idp.inacademia.local
