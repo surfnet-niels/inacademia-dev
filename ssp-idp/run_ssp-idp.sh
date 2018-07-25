@@ -1,8 +1,18 @@
 #! /bin/bash
 
+# Steup the netwerk if needed
+if [ ! "$(docker network ls | grep inacademia.local)" ]; then
+  echo "Creating inacademia.local network ..."
+  ../dockernet.sh
+else
+  echo "inacademia.local network exists."
+fi
 # Build the docker image if needed
 if [[ "$(docker images -q inacademia/ssp-idp:v1 2> /dev/null)" == "" ]]; then
+  echo "Creating inacademia/ssp-idp:v1 docker container ..."
   docker build -t inacademia/ssp-idp:v1 .
+else
+  echo "inacademia/ssp-idp:v1 docker container exists..."
 fi
 
 # Start SSP IDP
