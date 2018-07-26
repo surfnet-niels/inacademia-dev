@@ -22,5 +22,6 @@ COPY rsyslog.conf /etc/rsyslog.conf
 COPY inacademia.conf /etc/rsyslog.d/inacademia.conf
 COPY start.sh /tmp/inacademia/start.sh
 COPY config/production/attributemaps /tmp/inacademia/attributemaps
+COPY config/cdb/cdb.json.example /etc/cdb/cdb.json
 
 ENTRYPOINT ["/tmp/inacademia/start.sh"]
