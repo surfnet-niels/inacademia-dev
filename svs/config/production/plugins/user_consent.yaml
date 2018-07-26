@@ -1,0 +1,5 @@
+module: svs.user_consent.UserConsent
+name: Consent
+config:
+  logo_base_path: "/var/svs/logos"
+
