@@ -14,4 +14,11 @@ RUN wget https://github.com/zmartzone/mod_auth_openidc/releases/download/v2.3.0/
 RUN apt -y install ./libcjose0_0.5.1-1.xenial.1_amd64.deb
 RUN apt -y install ./libapache2-mod-auth-openidc_2.3.7-1.xenial.1_amd64.deb
 
+RUN a2enmod ssl
+RUN a2enmod auth_openidc
+RUN mkdir /etc/apache2/ssl
+
+COPY config/certs/ /etc/apache2/ssl/
+COPY config/rp.conf /etc/apache2/sites-enabled/
+
 ENTRYPOINT service apache2 start && /bin/bash
