@@ -1,4 +1,5 @@
 #! /bin/bash
+IMAGE_TAG=inacademia/ssp-idp:v1
 
 # Steup the netwerk if needed
 if [ ! "$(docker network ls | grep inacademia.local)" ]; then
@@ -8,11 +9,11 @@ else
   echo "inacademia.local network exists."
 fi
 # Build the docker image if needed
-if [[ "$(docker images -q inacademia/ssp-idp:v1 2> /dev/null)" == "" ]]; then
-  echo "Creating inacademia/ssp-idp:v1 docker container ..."
-  docker build -t inacademia/ssp-idp:v1 .
+if [[ "$(docker images -q $IMAGE_TAG 2> /dev/null)" == "" ]]; then
+  echo "Creating $IMAGE_TAG docker container ..."
+  docker build -t $IMAGE_TAG .
 else
-  echo "inacademia/ssp-idp:v1 docker container exists..."
+  echo "$IMAGE_TAG docker container exists..."
 fi
 
 # Start SSP IDP
@@ -27,4 +28,4 @@ docker run \
 	--expose 80 \
 	--expose 443 \
 	-p 443:443 \
-	-it inacademia/ssp-idp:v1
+	-it $IMAGE_TAG

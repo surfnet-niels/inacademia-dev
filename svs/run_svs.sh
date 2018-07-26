@@ -1,10 +1,10 @@
 #! /bin/bash
+IMAGE_TAG=inacademia/ssp-idp:v1
 
 # Build the docker image if needed
-if [[ "$(docker images -q inacademia/inacademia/svs:v1:v1 2> /dev/null)" == "" ]]; then
-  docker build -t inacademia/inacademia/svs:v1 .
+if [[ "$(docker images -q $IMAGE_TAG 2> /dev/null)" == "" ]]; then
+  docker build -t $IMAGE_TAG .
 fi
-
 
 # Start SVS
 docker run -it \
@@ -26,4 +26,4 @@ docker run -it \
 	--hostname svs.inacademia.local \
 	--expose 80 \
 	--expose 443 \
-	inacademia/svs:v1
+	$IMAGE_TAG
