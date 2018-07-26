@@ -21,6 +21,6 @@ RUN pip3 install pystache
 COPY rsyslog.conf /etc/rsyslog.conf
 COPY inacademia.conf /etc/rsyslog.d/inacademia.conf
 COPY start.sh /tmp/inacademia/start.sh
-COPY attributemaps /tmp/inacademia/attributemaps
+COPY config/production/attributemaps /tmp/inacademia/attributemaps
 
 ENTRYPOINT ["/tmp/inacademia/start.sh"]

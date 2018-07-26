@@ -1,4 +1,4 @@
-BASE: https://op.srv.inacademia.org
+BASE: https://op.inacademia.local
 INTERNAL_ATTRIBUTES: 'internal_attributes.yaml'
 COOKIE_STATE_NAME: 'SATOSA_STATE'
 BACKEND_MODULES:

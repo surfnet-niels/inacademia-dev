@@ -1,5 +1,5 @@
 #! /bin/bash
-IMAGE_TAG=inacademia/ssp-idp:v1
+IMAGE_TAG=inacademia/svs:v1
 
 # Build the docker image if needed
 if [[ "$(docker images -q $IMAGE_TAG 2> /dev/null)" == "" ]]; then
