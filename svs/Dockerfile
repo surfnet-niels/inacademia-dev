@@ -18,8 +18,8 @@ RUN pip3 install git+git://github.com/InAcademia/SATOSA.git@svs-1.0.1#egg=SATOSA
 RUN pip3 install git+git://github.com/InAcademia/svs.git#egg=svs
 RUN pip3 install pystache
 
-COPY rsyslog.conf /etc/rsyslog.conf
-COPY inacademia.conf /etc/rsyslog.d/inacademia.conf
+COPY config/rsyslog/rsyslog.conf /etc/rsyslog.conf
+COPY config/rsyslog/inacademia.conf /etc/rsyslog.d/inacademia.conf
 COPY start.sh /tmp/inacademia/start.sh
 COPY config/production/attributemaps /tmp/inacademia/attributemaps
 COPY config/cdb/cdb.json.example /etc/cdb/cdb.json
