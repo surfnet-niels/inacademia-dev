@@ -2,13 +2,10 @@ FROM ubuntu:16.04
 
 EXPOSE 443
 
-RUN apt -y update && apt -y full-upgrade && apt -y autoremove && apt install -y --no-install-recommends sudo dnsutils git software-properties-common
-
-RUN apt-get -y install apache2 ufw wget
-
+RUN apt -y update && apt -y full-upgrade && apt -y autoremove && apt install -y --no-install-recommends sudo dnsutils git software-properties-common apache2 wget
+RUN apt-get -y clean
 
 RUN wget https://github.com/zmartzone/mod_auth_openidc/releases/download/v2.3.7/libapache2-mod-auth-openidc_2.3.7-1.xenial.1_amd64.deb
-
 RUN wget https://github.com/zmartzone/mod_auth_openidc/releases/download/v2.3.0/libcjose0_0.5.1-1.xenial.1_amd64.deb
 
 RUN apt -y install ./libcjose0_0.5.1-1.xenial.1_amd64.deb
