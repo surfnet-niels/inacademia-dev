@@ -15,6 +15,7 @@
     ],
     "response_types": ["id_token"],
     "client_id": "rp",
+    //TODO: add bits
     "redirect_uris": [
       "https://rp.inacademia.local/protected/"
     ]
