@@ -1,0 +1,22 @@
+{
+  "rp": {
+    "allowed_claims": [
+      "domain",
+      "country"
+    ],
+    "allowed_scope_values": [
+      "student",
+      "affiliated",
+      "employee",
+      "faculty+staff",
+      "alum",
+      "persistent",
+      "transient"
+    ],
+    "response_types": ["id_token"],
+    "client_id": "rp",
+    "redirect_uris": [
+      "https://rp.inacademia.local/protected/"
+    ]
+  }
+}
