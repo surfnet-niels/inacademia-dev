@@ -4,6 +4,7 @@ EXPOSE 443
 
 RUN apt -y update && apt -y full-upgrade && apt -y autoremove && apt install -y --no-install-recommends sudo dnsutils git software-properties-common
 RUN apt-add-repository -y ppa:ansible/ansible && apt -y update && apt install -y ansible
+RUN apt -y clean
 
 RUN git clone https://github.com/surfnet-niels/simplesaml-idp.git /tmp/ansible/simplesaml-idp
 COPY config/ansible/inventory /tmp/ansible/simplesaml-idp/
