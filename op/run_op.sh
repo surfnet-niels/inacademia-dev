@@ -16,6 +16,5 @@ docker run --net inacademia.local --ip 172.172.172.2 -e BACKEND_PORT=tcp://172.1
 	--expose 80 \
 	--expose 443 \
 	-v /home/niels/dev/inacademia-dev/op/config/etc/ssl:/etc/ssl \
-	-p 443:443 \
 	-it $IMAGE_TAG
 

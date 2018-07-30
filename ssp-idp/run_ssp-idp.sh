@@ -27,5 +27,4 @@ docker run \
 	--hostname idp.inacademia.local \
 	--expose 80 \
 	--expose 443 \
-	-p 443:443 \
 	-it $IMAGE_TAG
