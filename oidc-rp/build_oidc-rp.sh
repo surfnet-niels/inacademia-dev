@@ -1,5 +1,5 @@
 #! /bin/bash
-IMAGE_TAG=inacademia/ssp-rp:v1
+IMAGE_TAG=inacademia/oidc-rp:v1
 
 # As the build command is being called, we assume we need to build a new image. 
 # To be sure we therefor first remove existign ones

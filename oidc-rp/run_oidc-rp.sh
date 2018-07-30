@@ -1,5 +1,5 @@
 #! /bin/bash
-IMAGE_TAG=inacademia/ssp-rp:v1
+IMAGE_TAG=inacademia/oidc-rp:v1
 
 # Steup the netwerk if needed
 if [ ! "$(docker network ls | grep inacademia.local)" ]; then
@@ -16,7 +16,7 @@ else
   echo "$IMAGE_TAG docker container exists..."
 fi
 
-# Start SSP RP
+# Start OIDC RP
 docker run \
 	--net inacademia.local \
 	--ip 172.172.172.100 \
