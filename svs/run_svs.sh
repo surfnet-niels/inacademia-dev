@@ -11,8 +11,8 @@ docker run -it \
 	--env PROXY_PORT=80 \
 	--env SATOSA_STATE_ENCRYPTION_KEY=1fa0dafd36d9d2c8401b943sk4kwde954e2016cf3f37fa1f67bbffe6c4f2f78e \
 	--env SATOSA_USER_ID_HASH_SALT=6f692915a7df20d9d4be17a70djdieff04585b0ab231825b7a15ed5d6140aa1e \
-	-v /srv/docker/inacademia/docker-svs-inacademia/config/production:/var/svs \
-	-v /srv/docker/inacademia/docker-svs-inacademia/config/cdb:/etc/cdb \
+	-v /home/niels/dev/inacademia-dev/svs/config/production:/var/svs \
+	-v /home/niels/dev/inacademia-dev/svs/config/cdb:/etc/cdb \
 	-v /etc/passwd:/etc/passwd:ro   \
 	-v /etc/group:/etc/group:ro \
 	-e DATA_DIR=/var/svs \
@@ -27,3 +27,6 @@ docker run -it \
 	--expose 80 \
 	--expose 443 \
 	$IMAGE_TAG
+
+
+
