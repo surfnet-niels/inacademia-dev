@@ -7,7 +7,7 @@ cert_hostname: "{{ idp_hostname }}"
 letsencrypt_email: idp@inacademia.local
 letsencrypt_domain: "{{ idp_hostname }}"
 letsencrypt_request_www: false
- apache is installed first and claims port 80. Pause it to allow LetsEncrypt to request a certificate
+# apache is installed first and claims port 80. Pause it to allow LetsEncrypt to request a certificate
 letsencrypt_pause_services: [apache2]
 
 ssp_version: 1.15.4
@@ -28,4 +28,7 @@ ssp_title_suffix: INACADEMIA.LOCAL
 ssl_hostname: "{{ idp_hostname }}"
 ssl_webmaster: "webmaster@{{ ssl_hostname }}"
 ssl_docroot: "{{ ssp_dir }}/www"
+
+ssp_debug: true
+ssp_showerrors: true
 

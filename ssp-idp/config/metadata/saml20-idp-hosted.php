@@ -14,8 +14,8 @@ $metadata['__DYNAMIC:1__'] = array(
 	'host' => '__DEFAULT__',
 
 	// X.509 key and certificate. Relative to the cert directory.
-	'privatekey' => 'ssp-idp.satosa.dev.pem',
-	'certificate' => 'ssp-idp.satosa.dev.crt',
+	'privatekey' => 'idp.inacademia.local.pem',
+	'certificate' => 'idp.inacademia.local.crt',
 
 	/*
 	 * Authentication source to use. Must be one that is configured in
@@ -56,7 +56,11 @@ $metadata['__DYNAMIC:1__'] = array(
 		//40 => 'core:AttributeRealm',
 		//100 => array('class' => 'core:AttributeMap', 'name2urn'),
 	),
-
+	'attributes.NameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
+	'authproc' => array(
+	  // Convert LDAP names to oids.
+	  100 => array('class' => 'core:AttributeMap', 'name2oid'),
+	),
 	/*
 	 * Uncomment the following to specify the registration information in the
 	 * exported metadata. Refer to:
