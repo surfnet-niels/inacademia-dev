@@ -18,7 +18,7 @@ config:
     metadata:
         local: [idp.xml]
 
-    entityid: 'https://inacademia.org/metadata/inacademia-simple-validation.xml'
+    entityid: 'https://inacademia.local/metadata/inacademia-simple-validation.xml'
     service:
       sp:
         want_assertions_signed: true
