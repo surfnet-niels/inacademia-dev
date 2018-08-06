@@ -11,5 +11,5 @@ VOLUME /etc/ssl
 ENV HTTP_PORT 80
 ENV REWRITE_LOCATION 1
 EXPOSE 443
-#ENTRYPOINT ["/start.sh"]
-ENTRYPOINT /bin/bash
+ENTRYPOINT ["/start.sh"]
+#ENTRYPOINT /bin/bash
