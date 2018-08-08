@@ -15,8 +15,10 @@
     ],
     "response_types": ["id_token"],
     "client_id": "rp",
+    "display_name": "User friendly RP name",
+    "logo": "https://rp.logo.local/logo.img",
     "redirect_uris": [
-       "https://rp.inacademia.local/protected/"
+      "https://rp.inacademia.local/protected/"
     ]
   }
 }
