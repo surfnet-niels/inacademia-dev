@@ -6,13 +6,17 @@ if [[ "$(docker images -q $IMAGE_TAG 2> /dev/null)" == "" ]]; then
   docker build -t $IMAGE_TAG .
 fi
 
+# find the location of configs in current directory structure
+RUN_DIR=$PWD
+CONFIG_DIR="$RUN_DIR/config"
+
 # Start SVS
 docker run -it \
 	--env PROXY_PORT=80 \
 	--env SATOSA_STATE_ENCRYPTION_KEY=1fa0dafd36d9d2c8401b943sk4kwde954e2016cf3f37fa1f67bbffe6c4f2f78e \
 	--env SATOSA_USER_ID_HASH_SALT=6f692915a7df20d9d4be17a70djdieff04585b0ab231825b7a15ed5d6140aa1e \
-	-v /config/production:/var/svs \
-	-v /config/cdb:/etc/cdb \
+	-v $CONFIG_DIR/production:/var/svs \
+	-v $CONFIG_DIR/cdb:/etc/cdb \
 	-v /etc/passwd:/etc/passwd:ro   \
 	-v /etc/group:/etc/group:ro \
 	-e DATA_DIR=/var/svs \
