@@ -22,7 +22,7 @@ $metadata['__DYNAMIC:1__'] = array(
 	 * 'config/authsources.php'.
 	 */
 	'auth' => 'example-userpass',
-	'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
+	'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha1',
 
 	/*
 	 * WARNING: SHA-1 is disallowed starting January the 1st, 2014.
