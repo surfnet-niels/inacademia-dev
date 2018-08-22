@@ -18,4 +18,6 @@ RUN mkdir /etc/apache2/ssl
 COPY config/certs/ /etc/apache2/ssl/
 COPY config/rp.conf /etc/apache2/sites-enabled/
 
+RUN apt-get update && apt-get install -y vim
+
 ENTRYPOINT service apache2 start && /bin/bash

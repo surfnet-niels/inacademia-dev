@@ -5,13 +5,13 @@
 <ns1:Signature Id="Signature1">
     <ns1:SignedInfo>
         <ns1:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-        <ns1:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+        <ns1:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256"/>
         <ns1:Reference URI="#id-my5azc6vMDmAYgB4w">
             <ns1:Transforms>
                 <ns1:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
                 <ns1:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
             </ns1:Transforms>
-            <ns1:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+            <ns1:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256"/>
             <ns1:DigestValue>wsi6shNLW1hALmZvObFDKmg8M2w=</ns1:DigestValue>
         </ns1:Reference>
     </ns1:SignedInfo>

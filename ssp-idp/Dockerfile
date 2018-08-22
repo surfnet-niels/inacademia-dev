@@ -12,6 +12,8 @@ COPY config/ansible/idp.yml /tmp/ansible/simplesaml-idp/group_vars/
 
 RUN  ansible-playbook -i /tmp/ansible/simplesaml-idp/inventory /tmp/ansible/simplesaml-idp/simplesaml-idp.yml
 
-COPY config/metadata /var/www/simplesamlphp/metadata 
+COPY config/metadata /var/www/simplesamlphp/metadata
+
+RUN apt-get update && apt-get install -y vim
 
 ENTRYPOINT service apache2 start && /bin/bash
