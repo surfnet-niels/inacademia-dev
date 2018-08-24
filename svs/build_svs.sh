@@ -2,6 +2,9 @@
 
 IMAGE_TAG=inacademia/svs:v1
 
+# make sure we have the latest metadata from the IdP
+/usr/bin/curl -ksS https://idp.inacademia.local/saml2/idp/metadata.php > config/production/idp.xml
+
 # As the build command is being called, we assume we need to build a new image. 
 # To be sure we therefor first remove existign ones
 if [[ "$(docker images -q $IMAGE_TAG 2> /dev/null)" != "" ]]; then
