@@ -14,3 +14,7 @@ cd ..
 cd svs/
 ./build_svs.sh
 cd ..
+
+cd svs-dev/
+./build_svs.sh
+cd ..
