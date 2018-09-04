@@ -1,0 +1,12 @@
+module: svs.inacademia_frontend.InAcademiaFrontend
+name: InAcademia
+config:
+  signing_key_path: /var/svs/inAcademia.key
+  client_db_path: /etc/cdb/cdb.json
+  entity_id_map_path: /var/svs/entityids.json
+  backend_name: InAcademiaBackend
+  provider:
+    client_registration_supported: Yes
+    response_types_supported: ["code", "id_token token"]
+    subject_types_supported: ["pairwise"]
+    scopes_supported: ["openid", "email","domain","country"]

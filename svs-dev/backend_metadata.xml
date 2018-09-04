@@ -1,0 +1,120 @@
+
+
+<?xml version="1.0"?>
+<ns0:EntityDescriptor xmlns:ns0="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ns1="http://www.w3.org/2000/09/xmldsig#" xmlns:ns2="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" xmlns:ns3="urn:oasis:names:tc:SAML:metadata:ui" ID="id-my5azc6vMDmAYgB4w" entityID="https://inacademia.local/metadata/inacademia-simple-validation.xml">
+<ns1:Signature Id="Signature1">
+    <ns1:SignedInfo>
+        <ns1:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+        <ns1:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256"/>
+        <ns1:Reference URI="#id-my5azc6vMDmAYgB4w">
+            <ns1:Transforms>
+                <ns1:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                <ns1:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            </ns1:Transforms>
+            <ns1:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256"/>
+            <ns1:DigestValue>wsi6shNLW1hALmZvObFDKmg8M2w=</ns1:DigestValue>
+        </ns1:Reference>
+    </ns1:SignedInfo>
+    <ns1:SignatureValue>PDU7z16xTfnLmkAKfzCUWa7NEHU3AezDggVkMq26nhSSQPs5F9DqAFV5hNSDNSi9
+    /5tvGJzqN0+mxj2yMbkXNm9H54qBYqSAOFJUEXUFEuxWk+3vnBCqBvYYiFH3mOVc
+    LmB0B8rw2hVgsiQgHo3gej/aTeuShUadEaM6wUQY+fWun1mZs6wldjRRclYz+Eyy
+    rz79sSyFf4vcAXa3MMcuku8YEnqARAUdflnoxjFvCwHMw06i6XRcz1PELYonIQNe
+    KKgdtlx5RvVYIWzCVJcmnQ4PGckt11wpfDDQwKuI9kX3lhsLMRHmAu+gNzhfyfgj
+    I0jelRKg/o28tTR9cVOyP4sf+wgGVcopc/AT80nm8xNy+MIOWGvLtXs2YoTN7Whx
+    /PDbpXYtPd2a1ot43Tk5XHEjTgB9Fz+nXYqUrCLPnw3HJKWbRXC3PoNkeLLOwlMK
+    dgV7WB651OJbdmzTlErhf/J9ijd3469L6oAHFmlulPJ8eUe6Dcc//efsGCYsrOWo
+    btR98msMQ7j4rMWC3OuXITN3BH61xH4abRte/h76FdveJUBWTok3cl7lPhBhsfSP
+    6kPh7IqcuPlKqbapIZGnUPFLO1uvftbn+NZU9xQjSStymaNXQ6ip8pTT+qg+1Oia
+    /h38Qdwy3ZCuHg7ax7O3TqP3PZylw69xJ2xFIyTb53s=</ns1:SignatureValue>
+    <ns1:KeyInfo>
+        <ns1:X509Data>
+            <ns1:X509Certificate>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</ns1:X509Certificate>
+        </ns1:X509Data>
+    </ns1:KeyInfo>
+</ns1:Signature>
+<ns0:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <ns0:Extensions>
+        <ns2:DiscoveryResponse Binding="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Location="https://op.inacademia.local/InAcademiaBackend/disco" index="1"/>
+        <ns3:UIInfo>
+            <ns3:DisplayName xml:lang="en">InAcademia Affiliation Validation Service</ns3:DisplayName>
+            <ns3:Description xml:lang="en">InAcademia validates the affiliation status (student, faculty, staff) assigned to you by your home institution. This data then is provided in anonymized form to services which for example grant student discounts. While your Institution assists in validation your affiliation, it has no relation with the Service requesting to validate your affiliation.</ns3:Description>
+            <ns3:Keywords xml:lang="en">Affiliation Validation Eligibility</ns3:Keywords>
+            <ns3:Logo height="60" width="120" xml:lang="en">https://inacademia.org/static/logo.png</ns3:Logo>
+            <ns3:InformationURL xml:lang="en">https://inacademia.org/about</ns3:InformationURL>
+            <ns3:PrivacyStatementURL xml:lang="en">https://inacademia.org/about/privacy</ns3:PrivacyStatementURL>
+        </ns3:UIInfo>
+    </ns0:Extensions>
+    <ns0:KeyDescriptor use="signing">
+        <ns1:KeyInfo>
+            <ns1:X509Data>
+                <ns1:X509Certificate>MIIGKTCCBBGgAwIBAgIJAOe7/WlvL7NUMA0GCSqGSIb3DQEBCwUAMIGqMQswCQYD
+                VQQGEwJOTDETMBEGA1UECAwKU29tZS1TdGF0ZTESMBAGA1UEBwwJQW1zdGVyZGFt
+                MR0wGwYDVQQKDBRHw4PCiUFOVCBBc3NvY2lhdGlvbjETMBEGA1UECwwKSW5BY2Fk
+                ZW1pYTEXMBUGA1UEAwwOaW5hY2FkZW1pYS5vcmcxJTAjBgkqhkiG9w0BCQEWFnN1
+                cHBvcnRAaW5hY2FkZW1pYS5vcmcwHhcNMTgwNzI2MDk0NDIxWhcNMjgwNzIzMDk0
+                NDIxWjCBqjELMAkGA1UEBhMCTkwxEzARBgNVBAgMClNvbWUtU3RhdGUxEjAQBgNV
+                BAcMCUFtc3RlcmRhbTEdMBsGA1UECgwUR8ODwolBTlQgQXNzb2NpYXRpb24xEzAR
+                BgNVBAsMCkluQWNhZGVtaWExFzAVBgNVBAMMDmluYWNhZGVtaWEub3JnMSUwIwYJ
+                KoZIhvcNAQkBFhZzdXBwb3J0QGluYWNhZGVtaWEub3JnMIICIjANBgkqhkiG9w0B
+                AQEFAAOCAg8AMIICCgKCAgEAqCdLYIITQ6evX9K5lOMkYfvIKbBunTPnKPnol6+1
+                fxBBUSmxU3BPg1PVfEaxQv2E9u1mQYK9n24cFiLqItVn77h7IsHSmwHV7bdjFeL9
+                FaRVB4s1pFqyazuMmUistz+w2UQvDfJdmC8zEgX62upZS+56/249CcgaBLx/YKsk
+                wKgf7H2TtkLCn8/IxQyDpiJtyHqseVy715vU2dpWmOIrpBGLAYAs/sU4Dj4rT4UB
+                tEema5dfmA7yzxKjPnS3lDWd2t2uTPt/S0Vhpv1c/Rxwwze6gOpx4xV/wqjyAe0N
+                Fsut7IN2/SgWyNjE0Uq+PDjI9dLYmY491LGsyKytplTPQo5Gz8ug1GqwUXU9f6Ky
+                Nr4hKA/G0OfFFiKpj8e0FEiM9Fo2ATBoLmXt/N6hgi5sBo1gklWNp/Q8GsDz1dVc
+                RsbWMMQxBr4UKJOQh9z2uZioEAugY6IP/3XA+FV74DqmcZzhLaKSmXjcCXGAXNuo
+                6UObaSLTCSH4XNVQiIAEjs/Z4QaeCkSPWUkFKjRjWjEm2Ka98oWLUejz/0O3bOMA
+                HMMXU+uP4cDUx5eEng6gfdte5/GgY57ub4NsMInj1C43jmgNIyZn4AZUUp5gmzH6
+                SQgYemn7acYfz5DBjQr1qyk/6VtyRqAdSE1EuiN6XVgKRsvk01J48+OnkXzrgtfO
+                HsMCAwEAAaNQME4wHQYDVR0OBBYEFFVixtT/H4Kwcwj9deIu9FjX8hSfMB8GA1Ud
+                IwQYMBaAFFVixtT/H4Kwcwj9deIu9FjX8hSfMAwGA1UdEwQFMAMBAf8wDQYJKoZI
+                hvcNAQELBQADggIBAFzI+W80QbXti8LH5hRwx4Z14E1k8QKBkct3OTfo2lx32lt2
+                z0jEghXx6XuBy0GGfFqDtq2nL0YQtenM3JvQRBzGSNUfcGipbcDudPR3rU4NTyR1
+                /k0eJMG7ooUVfD0LIdLElkiXTHRZjH0rZW8Aa8kUTcnnhGQummk0jAKZG0iGUisa
+                Qc4FAbykTs5fpabSxIMdnBCW3ukJcR0BVcKhfFwqRtl1ZXoap/0saF31JPkvHSQz
+                4qyDxhDmy/76UBFNeLUrsMBloOOH8nZxwG+AaDhFtcfdG26Ni9fPLZ07CdVdSH87
+                is1dwzdP/oz9THs+NbN571MuwndaRPscAg8orkseawczYmw1w/vzweoL3y+vU1WB
+                HhaiD6KpytT7LUdbOTMs7Xj+15IK9RXDIHtyRqNaabmNjZO8u86o/AlefdjPkSWj
+                ybJKzxBShG6zQqkpeYCO5qz9BiAC1BxTfLx8aJADZpRoU6W/L6Sto+86B+OjVeU2
+                3VPj5rziwQzMbEUTF6a4B/pC6rF91sMSzrFX7KJP0/Iog729BCu6aH86533/FIXj
+                r+Ns2XNVh25+IeE8leUeR2xfxaFU9BDwosFW0MAGIBdHYUu6JhF1kAbHyZ8cTD+g
+                PP2NizZ8nBxMClkJF1jRDvuVWxErrJsqW2fzuwbl2HUe6XiJoV7jqBHKFqIW
+            </ns1:X509Certificate>
+        </ns1:X509Data>
+    </ns1:KeyInfo>
+</ns0:KeyDescriptor>
+<ns0:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</ns0:NameIDFormat>
+<ns0:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://op.inacademia.local/InAcademiaBackend/acs/post" index="1"/>
+<ns0:AttributeConsumingService index="1">
+    <ns0:ServiceName xml:lang="en">InAcademia Affiliation Validation Service</ns0:ServiceName>
+    <ns0:RequestedAttribute FriendlyName="edupersonscopedaffiliation" Name="urn:oid:1.3.6.1.4.1.5923.1.1.1.9" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="true"/>
+    <ns0:RequestedAttribute FriendlyName="schachomeorganization" Name="urn:oid:1.3.6.1.4.1.25178.1.2.9" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="false"/>
+    <ns0:RequestedAttribute FriendlyName="edupersontargetedid" Name="urn:oid:1.3.6.1.4.1.5923.1.1.1.10" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="false"/>
+    <ns0:RequestedAttribute FriendlyName="edupersonprincipalname" Name="urn:oid:1.3.6.1.4.1.5923.1.1.1.6" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="false"/>
+    <ns0:RequestedAttribute FriendlyName="edupersonaffiliation" Name="urn:oid:1.3.6.1.4.1.5923.1.1.1.1" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="false"/>
+</ns0:AttributeConsumingService>
+</ns0:SPSSODescriptor>
+<ns0:Organization>
+    <ns0:OrganizationName xml:lang="en">InAcademia</ns0:OrganizationName>
+    <ns0:OrganizationDisplayName xml:lang="en">InAcademia</ns0:OrganizationDisplayName>
+    <ns0:OrganizationURL xml:lang="en">https://inacademia.org/about</ns0:OrganizationURL>
+</ns0:Organization>
+<ns0:ContactPerson contactType="support">
+    <ns0:GivenName>InAcademia</ns0:GivenName>
+    <ns0:SurName>Enduser Support</ns0:SurName>
+    <ns0:EmailAddress>help@inacademia.org</ns0:EmailAddress>
+</ns0:ContactPerson>
+<ns0:ContactPerson contactType="technical">
+    <ns0:GivenName>InAcademia</ns0:GivenName>
+    <ns0:SurName>Administrative Support</ns0:SurName>
+    <ns0:EmailAddress>admin@inacademia.org</ns0:EmailAddress>
+</ns0:ContactPerson>
+<ns0:ContactPerson contactType="technical">
+    <ns0:GivenName>InAcademia</ns0:GivenName>
+    <ns0:SurName>Technical Support</ns0:SurName>
+    <ns0:EmailAddress>tech@inacademia.org</ns0:EmailAddress>
+</ns0:ContactPerson>
+</ns0:EntityDescriptor>
+
+
