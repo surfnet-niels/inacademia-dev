@@ -1,4 +1,8 @@
 #!/bin/bash
+if ! [ -f /.dockerenv ]; then
+    echo "I'm not a docker";
+    exit 1
+fi
 mkdir -p /opt/workdir
 git clone -b svs-1.0.1 https://github.com/InAcademia/SATOSA.git /opt/workdir/satosa
 git clone https://github.com/InAcademia/svs.git /opt/workdir/svs
