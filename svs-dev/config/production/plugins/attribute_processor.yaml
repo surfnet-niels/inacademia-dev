@@ -1,0 +1,14 @@
+module: satosa.micro_services.attribute_processor.AttributeProcessor
+name: AttributeProcessor
+config:
+  process:
+  - attribute: scoped_affiliation
+    processors:
+    - name: ScopeExtractorProcessor
+      module: satosa.micro_services.processors.scope_extractor_processor
+      mapped_attribute: domain
+  - attribute: affiliation
+    processors:
+    - name: ScopeRemoverProcessor
+      module: satosa.micro_services.processors.scope_remover_processor
+      mapped_attribute: domain

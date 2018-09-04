@@ -1,0 +1,54 @@
+module: svs.inacademia_backend.InAcademiaBackend
+name: InAcademiaBackend
+config:
+  userid_source_attributes: ['eduPersonTargetedID', 'eduPersonPrincipalName']
+  affiliation_attributes: ['eduPersonAffiliation', 'eduPersonScopedAffiliation']
+  error_uri: https://inacademia.org/error_no_attributes
+  sp_config:
+    key_file: /var/svs/inAcademia.key
+    cert_file: /var/svs/inAcademia.pub
+    name: ['InAcademia Affiliation Validation Service', 'en']
+    organization: {display_name: InAcademia, name: InAcademia, url: 'https://inacademia.org/about'}
+
+    contact_person:
+      - {contact_type: support, given_name: InAcademia, sur_name: Enduser Support, email_address: help@inacademia.org}
+      - {contact_type: technical, given_name: InAcademia, sur_name: Administrative Support, email_address: admin@inacademia.org}
+      - {contact_type: technical, given_name: InAcademia, sur_name: Technical Support, email_address: tech@inacademia.org}
+
+    metadata:
+        local: [idp.xml]
+
+    entityid: 'https://inacademia.local/metadata/inacademia-simple-validation.xml'
+    service:
+      sp:
+        want_assertions_signed: true
+        allow_unsolicited: true
+        endpoints:
+          assertion_consumer_service:
+          - ['<base_url>/<name>/acs/post', 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST']
+          discovery_response:
+          - ['<base_url>/<name>/disco', 'urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol']
+        required_attributes:
+          - edupersonscopedaffiliation
+        optional_attributes:
+          - schachomeorganization
+          - edupersontargetedid
+          - edupersonprincipalname
+          - edupersonaffiliation
+        name_id_format: 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent'
+        ui_info:
+          display_name:
+            - {text: 'InAcademia Affiliation Validation Service', lang: en}
+          description:
+              - {text: 'InAcademia validates the affiliation status (student, faculty, staff) assigned to you by your home institution. This data then is provided in anonymized form to services which for example grant student discounts. While your Institution assists in validation your affiliation, it has no relation with the Service requesting to validate your affiliation.',
+                lang: en}
+          logo:
+            - {text: 'https://inacademia.org/static/logo.png', width: '120', height: '60', lang: en}
+          keywords:
+            - {text: [Affiliation, Validation, Eligibility], lang: en}
+          information_url:
+            - {text: 'https://inacademia.org/about', lang: en}
+          privacy_statement_url:
+            - {text: 'https://inacademia.org/about/privacy', lang: en}
+    name_form: 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri'
+  disco_srv: 'https://md.nordu.net/role/idp.ds'
