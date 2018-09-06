@@ -15,7 +15,7 @@ RUN apt clean
 
 RUN pip3 install --upgrade pip setuptools
 RUN pip3 install git+git://github.com/InAcademia/SATOSA.git@svs-1.0.1#egg=SATOSA
-RUN pip3 install -e git+git://github.com/InAcademia/svs.git@cdb-new-fields-and-validation-script#egg=svs
+RUN pip3 install -e git+git://github.com/inacademia-development/svs.git#egg=svs
 RUN pip3 install pystache
 
 COPY config/rsyslog/rsyslog.conf /etc/rsyslog.conf
