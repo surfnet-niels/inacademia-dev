@@ -2,4 +2,11 @@ module: svs.user_consent.UserConsent
 name: Consent
 config:
   logo_base_path: "/var/svs/logos"
+  log_target: '/var/svs/consent.log'
+  attributes:
+    affiliation: "Affiliation"
+    domain: "Domain"
+    tld: "Country"
+    org: "Institution"
+    foo: "Bar"
 
