@@ -7,6 +7,7 @@ FRONTEND_MODULES:
   - 'plugins/inacademia_frontend.yaml'
 MICRO_SERVICES:
   - 'plugins/attribute_processor.yaml'
+  - 'plugins/metainfo.yaml'
   - 'plugins/custom_logging.yaml'
   - 'plugins/user_consent.yaml'
 LOGGING:

@@ -1,5 +1,6 @@
 #! /bin/bash
 IMAGE_TAG=inacademia/ssp-idp:v1
+CONTAINER_NAME=inacademia_ssp-idp
 
 # Steup the netwerk if needed
 if [ ! "$(docker network ls | grep inacademia.local)" ]; then
@@ -17,14 +18,15 @@ else
 fi
 
 # Start SSP IDP
-docker run \
-	--net inacademia.local \
-	--ip 172.172.172.200 \
-	--add-host=svs.inacademia.local:172.172.172.1 \
-	--add-host=op.inacademia.local:172.172.172.2 \
-	--add-host=rp.inacademia.local:172.172.172.100 \
-	--add-host=idp.inacademia.local:172.172.172.200 \
-	--hostname idp.inacademia.local \
-	--expose 80 \
-	--expose 443 \
-	-it $IMAGE_TAG
+docker start -i $CONTAINER_NAME || docker run -it \
+    --name $CONTAINER_NAME \
+    --net inacademia.local \
+    --ip 172.172.172.200 \
+    --add-host=svs.inacademia.local:172.172.172.1 \
+    --add-host=op.inacademia.local:172.172.172.2 \
+    --add-host=rp.inacademia.local:172.172.172.100 \
+    --add-host=idp.inacademia.local:172.172.172.200 \
+    --hostname idp.inacademia.local \
+    --expose 80 \
+    --expose 443 \
+    $IMAGE_TAG

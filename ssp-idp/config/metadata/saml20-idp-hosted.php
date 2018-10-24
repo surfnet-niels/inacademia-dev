@@ -12,6 +12,10 @@ $metadata['__DYNAMIC:1__'] = array(
 	 * Can be '__DEFAULT__', to use this entry by default.
 	 */
 	'host' => '__DEFAULT__',
+    'RegistrationInfo' => array(
+        'authority' => 'urn:mace:idp.foo.bar'
+        //'authority' => 'https://incommon.org'
+    ),
 
 	// X.509 key and certificate. Relative to the cert directory.
 	'privatekey' => 'idp.inacademia.local.pem',
