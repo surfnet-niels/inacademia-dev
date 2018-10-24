@@ -2,7 +2,8 @@
   "rp": {
     "allowed_claims": [
       "domain",
-      "country"
+      "country",
+      "institution"
     ],
     "allowed_scope_values": [
       "student",

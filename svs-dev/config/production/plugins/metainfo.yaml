@@ -1,7 +1,7 @@
 module: svs.metainfo.MetaInfo
 name: MetaInfo
 config:
-    displayname: 'name'
+    displayname: 'org'
     country: 'tld'
     exceptions:
       'https://incommon.org': 'us'

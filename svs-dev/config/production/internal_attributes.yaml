@@ -15,3 +15,6 @@ attributes:
     openid: [auth_time]
   tld:
     openid: [country]
+  org:
+    openid: [institution]
+
