@@ -6,4 +6,4 @@ foreach (getallheaders() as $name => $value) {
    }
 }
 ?>
-
+<a href="/protected/redirect_uri?logout=%2Fprotected">Logout</a>
