@@ -1,0 +1,6 @@
+module: svs.blacklist.Blacklist
+name: Blacklist
+config:
+  error_uri: https://inacademia.org/error_no_attributes
+  blacklist:
+    - https://idp.inacademia.local/saml2/idp/metadata.php
