@@ -1,0 +1,3 @@
+#! /bin/bash
+IMAGE_TAG=inacademia/svs-dev:v1
+CONTAINER_NAME=inacademia_svs-dev
