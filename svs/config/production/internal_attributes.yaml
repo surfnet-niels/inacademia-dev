@@ -13,3 +13,7 @@ attributes:
     saml: [eduPersonPrincipalName]
   authtime:
     openid: [auth_time]
+  tld:
+    openid: [country]
+  org:
+    openid: [institution]

@@ -1,8 +1,8 @@
 module: svs.metainfo.MetaInfo
 name: MetaInfo
 config:
-    displayname: '*name'
-    country: '*country'
+    displayname: 'org'
+    country: 'tld'
     exceptions:
       'https://incommon.org': 'us'
       'http://kafe.kreonet.net': 'kr'
