@@ -1,5 +1,7 @@
 #! /bin/bash
 source svs.cnf
+IMAGE_TAG=${IMAGE_NAME}:${IMAGE_VERSION}_${DOCKER_VERSION}
+CONTAINER_NAME=${IMAGE_NAME/\//_}
 
 # As the build command is being called, we assume we need to build a new image.
 # To be sure we therefor first remove existign ones
@@ -10,14 +12,18 @@ fi
 
 echo "Building  docker container $IMAGE_TAG ..."
 # Build the docker image
-docker build -t $IMAGE_TAG .
+docker build -t $IMAGE_TAG \
+    --build-arg SATOSA_VERSION=${SATOSA_VERSION} \
+    --build-arg SVS_VERSION=${SVS_VERSION} \
+    .
+#    --no-cache .
 
 # find the location of configs in current directory structure
 RUN_DIR=$PWD
 CONFIG_DIR="$RUN_DIR/config"
 
 # Remove existing container
-docker rm $CONTAINER_NAME
+docker rm $CONTAINER_NAME || echo "$CONTAINER_NAME not found"
 
 # Create SVS
 docker create -it \
@@ -42,3 +48,4 @@ docker create -it \
     --expose 80 \
     --expose 443 \
     $IMAGE_TAG
+
