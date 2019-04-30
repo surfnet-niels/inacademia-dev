@@ -1,7 +1,9 @@
 #! /bin/bash
+
+# TODO: Sync naming of vars with svs-dev
 IMAGE_NAME=inacademia/svs
-IMAGE_VERSION=2.0.2
+IMAGE_VERSION=2.1.0
 DOCKER_VERSION=1
 
 SATOSA_VERSION=svs-1.0.1
-SVS_VERSION=master
+SVS_VERSION=2.1.0

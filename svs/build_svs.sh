@@ -3,6 +3,13 @@ source svs.cnf
 IMAGE_TAG=${IMAGE_NAME}:${IMAGE_VERSION}_${DOCKER_VERSION}
 CONTAINER_NAME=${IMAGE_NAME/\//_}
 
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "Building Container: $CONTAINER_NAME "
+echo "Using SATOSA version: $SATOSA_VERSION "
+echo "And SVS version: $SVS_VERSION "
+echo "Outputting: $IMAGE_TAG "
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+
 # As the build command is being called, we assume we need to build a new image.
 # To be sure we therefor first remove existign ones
 if [[ "$(docker images -q $IMAGE_TAG 2> /dev/null)" != "" ]]; then
@@ -15,8 +22,7 @@ echo "Building  docker container $IMAGE_TAG ..."
 docker build -t $IMAGE_TAG \
     --build-arg SATOSA_VERSION=${SATOSA_VERSION} \
     --build-arg SVS_VERSION=${SVS_VERSION} \
-    .
-#    --no-cache .
+    --no-cache .
 
 # find the location of configs in current directory structure
 RUN_DIR=$PWD

@@ -17,7 +17,6 @@
     "response_types": ["id_token"],
     "client_id": "rp",
     "display_name": "User friendly RP name",
-    "logo": "https://cdn.mutually.com/wp-content/uploads/2018/03/n.jpg",
     "redirect_uris": [
       "https://rp.inacademia.local/protected/redirect_uri"
     ]
