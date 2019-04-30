@@ -17,7 +17,7 @@ config:
 
     metadata:
         local: [idp.xml]
-        mdq: ['https://md.nordu.net/']
+        #mdq: ['https://md.nordu.net/']
 
     entityid: 'https://inacademia.local/metadata/inacademia-simple-validation.xml'
     service:
