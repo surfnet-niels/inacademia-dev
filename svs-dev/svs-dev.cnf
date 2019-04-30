@@ -1,3 +1,12 @@
-#! /bin/bash
 IMAGE_TAG=inacademia/svs-dev:v1
 CONTAINER_NAME=inacademia_svs-dev
+
+# SaToSa tag or branch - DO NOT CHANGE UNLESS YOU REALLY KNOW WHAT YOU ARE DOING!!
+SATOSA_TAG="svs-1.0.1"
+
+# SVS tag or branch - You may also change this by checking out new versions or branches in the workdir
+SVS_TAG="2.1.0"
+
+# The SSH key for pull/commit in InAcademia repository 
+GIT_KEY_PATH=/home/niels/keys/id_rsa_inacademia
+

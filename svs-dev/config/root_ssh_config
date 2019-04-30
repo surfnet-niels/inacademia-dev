@@ -1,0 +1,5 @@
+Host github.com
+   HostName github.com
+   User git
+   IdentityFile /tmp/inacademia/id_rsa_inacademia
+
