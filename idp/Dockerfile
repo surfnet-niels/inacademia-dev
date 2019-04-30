@@ -6,11 +6,11 @@ RUN apt -y update && apt -y full-upgrade && apt -y autoremove && apt install -y 
 RUN apt-add-repository -y ppa:ansible/ansible && apt -y update && apt install -y ansible
 RUN apt -y clean
 
-RUN git clone https://github.com/surfnet-niels/simplesaml-idp.git /tmp/ansible/simplesaml-idp
+RUN git clone https://github.com/OpenConext/OpenConext-DIY.git /tmp/ansible/simplesaml-idp
 COPY config/ansible/inventory /tmp/ansible/simplesaml-idp/
 COPY config/ansible/idp.yml /tmp/ansible/simplesaml-idp/group_vars/
 
-RUN  ansible-playbook -i /tmp/ansible/simplesaml-idp/inventory /tmp/ansible/simplesaml-idp/simplesaml-idp.yml
+RUN  ansible-playbook -i /tmp/ansible/simplesaml-idp/inventory /tmp/ansible/simplesaml-idp/openconext-diy.yml
 
 COPY config/metadata /var/www/simplesamlphp/metadata
 

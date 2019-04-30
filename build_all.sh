@@ -1,14 +1,14 @@
 #! /bin/bash
-cd oidc-rp/
-./build_oidc-rp.sh
+cd rp/
+./build_rp.sh
 cd ..
 
 cd op/
 ./build_op.sh
 cd ..
 
-cd ssp-idp/
-./build_ssp-idp.sh
+cd idp/
+./build_idp.sh
 cd ..
 
 cd svs/
@@ -16,5 +16,5 @@ cd svs/
 cd ..
 
 cd svs-dev/
-./build_svs.sh
+./build_svs-dev.sh
 cd ..
