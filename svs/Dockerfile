@@ -3,6 +3,8 @@ MAINTAINER InAcademia Team, tech@inacademia.org
 
 ARG SATOSA_VERSION=master
 ARG SVS_VERSION=master
+#ARG SATOSA_VERSION
+#ARG SVS_VERSION
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
