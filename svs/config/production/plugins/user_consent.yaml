@@ -1,7 +1,7 @@
 module: svs.user_consent.UserConsent
 name: Consent
 config:
-  logo_base_path: "/var/svs/logos"
+  logo_base_path: "/etc/cdb/logos"
   log_target: '/var/svs/consent.log'
   attributes:
     affiliation: "Affiliation"
