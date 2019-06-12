@@ -29,7 +29,6 @@ COPY config/rsyslog/inacademia.conf /etc/rsyslog.d/inacademia.conf
 COPY config/production/attributemaps /tmp/inacademia/attributemaps
 COPY config/cdb/cdb.json /etc/cdb/cdb.json
 COPY config/start.sh /tmp/inacademia/start.sh
-COPY config/cdb/logos /etc/cdb/logos
 
 RUN echo "SATOSA: " $SATOSA_VERSION > /tmp/inacademia/version
 RUN echo "SVS: " $SVS_VERSION >> /tmp/inacademia/version
