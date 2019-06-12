@@ -28,6 +28,7 @@ COPY config/production/attributemaps /tmp/inacademia/attributemaps
 COPY config/cdb/cdb.json.example /etc/cdb/cdb.json
 COPY config/start.sh /tmp/inacademia/start.sh
 COPY config/install.sh /tmp/inacademia/install.sh
+COPY config/cdb/logos /etc/cdb/logos
 
 #ENTRYPOINT ["/tmp/inacademia/start.sh"]
 ENTRYPOINT /bin/bash
