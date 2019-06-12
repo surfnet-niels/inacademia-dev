@@ -17,6 +17,7 @@
     "response_types": ["id_token"],
     "client_id": "rp",
     "display_name": "User friendly RP name",
+    "logo": "html.png",
     "redirect_uris": [
       "https://rp.inacademia.local/protected/redirect_uri"
     ]
