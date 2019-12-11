@@ -1,6 +1,6 @@
 #! /bin/bash
 IMAGE_TAG=inacademia/op:v1
-CONTAINER_NAME=inacademia_op
+CONTAINER_NAME=inacademia-op
 
 # Build the docker image if needed
 if [[ "$(docker images -q $IMAGE_TAG 2> /dev/null)" == "" ]]; then

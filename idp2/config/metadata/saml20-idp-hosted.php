@@ -55,8 +55,11 @@ $metadata['__DYNAMIC:1__'] = array(
 	        'class' => 'saml:AttributeNameID',
 	        'attribute' => 'uid',
 	        'SPNameQualifier' => FALSE,
-	        'Format' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent'
+	        'Format' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',
 	    ),
+	    3 => array(
+	        'class' => 'saml:PersistentNameID2TargetedID',
+      ),
 		//40 => 'core:AttributeRealm',
 		//100 => array('class' => 'core:AttributeMap', 'name2urn'),
 	  // Convert LDAP names to oids.

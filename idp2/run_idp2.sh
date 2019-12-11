@@ -1,6 +1,6 @@
 #! /bin/bash
-IMAGE_TAG=inacademia/idp:v1
-CONTAINER_NAME=inacademia-idp
+IMAGE_TAG=inacademia/idp2:v1
+CONTAINER_NAME=inacademia-idp2
 
 # Steup the netwerk if needed
 if [ ! "$(docker network ls | grep inacademia.local)" ]; then
