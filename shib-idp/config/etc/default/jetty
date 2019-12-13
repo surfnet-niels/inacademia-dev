@@ -1,0 +1,5 @@
+JETTY_HOME=/usr/local/src/jetty-src
+JETTY_BASE=/opt/jetty
+JETTY_USER=jetty
+JETTY_START_LOG=/var/log/jetty/start.log
+TMPDIR=/opt/jetty/tmp

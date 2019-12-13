@@ -1,0 +1,31 @@
+dn: ou=People,dc=inacademia,dc=local
+changetype: add
+objectclass: top
+objectclass: organizationalUnit
+ou: People
+
+dn: cn=student1,ou=People,dc=inacademia,dc=local
+changetype: add
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: student1
+givenName: Student 1
+sn: Test
+uid: student1
+userPassword: student1
+description: student
+
+dn: cn=employee1,ou=People,dc=inacademia,dc=local
+changetype: add
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: employee1
+givenName: Employee 1
+sn: Test
+uid: employee1
+userPassword: employee1
+description: employee

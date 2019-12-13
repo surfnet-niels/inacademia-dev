@@ -16,7 +16,8 @@ config:
       - {contact_type: technical, given_name: InAcademia, sur_name: Technical Support, email_address: tech@inacademia.org}
 
     metadata:
-        local: [idp.xml]
+        #local: [idp.xml]
+        local: [shib-idp.xml]
         #mdq: ['https://md.nordu.net/']
 
     entityid: 'https://inacademia.local/metadata/inacademia-simple-validation.xml'
@@ -29,14 +30,14 @@ config:
           - ['<base_url>/<name>/acs/post', 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST']
           discovery_response:
           - ['<base_url>/<name>/disco', 'urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol']
-        required_attributes:
-          - edupersonscopedaffiliation
+        #required_attributes:
         optional_attributes:
           - schachomeorganization
           - edupersontargetedid
           - edupersonprincipalname
           - edupersonaffiliation
-        name_id_format: 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent'
+          - edupersonscopedaffiliation
+        name_id_format: 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient'
         ui_info:
           display_name:
             - {text: 'InAcademia Affiliation Validation Service', lang: en}

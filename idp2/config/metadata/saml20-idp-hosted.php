@@ -52,10 +52,12 @@ $metadata['__DYNAMIC:1__'] = array(
 	//'userid.attribute' => 'eduPersonPrincipalName',
 	'authproc' => array(
 	    2 => array(
-	        'class' => 'saml:AttributeNameID',
-	        'attribute' => 'uid',
-	        'SPNameQualifier' => FALSE,
-	        'Format' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',
+	        'class' => 'saml:TransientNameID',
+// 	        'class' => 'saml:PersistentNameID',
+// 	        'class' => 'saml:AttributeNameID',
+// 	        'attribute' => 'uid',
+// 	        'SPNameQualifier' => FALSE,
+// 	        'Format' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',
 	    ),
 	    3 => array(
 	        'class' => 'saml:PersistentNameID2TargetedID',
