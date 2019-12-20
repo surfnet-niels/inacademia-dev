@@ -8,5 +8,5 @@ SATOSA_TAG="svs-1.0.1"
 SVS_TAG="2.1.0"
 
 # The SSH key for pull/commit in InAcademia repository
-GIT_KEY_PATH=~/.ssh/id_rsa
+GIT_KEY_PATH=~/.ssh/id_rsa_inacademia
 
