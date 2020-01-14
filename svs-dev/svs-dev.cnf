@@ -2,7 +2,7 @@ IMAGE_TAG=inacademia/svs-dev:v1
 CONTAINER_NAME=inacademia-svs-dev
 
 # SaToSa tag or branch - DO NOT CHANGE UNLESS YOU REALLY KNOW WHAT YOU ARE DOING!!
-SATOSA_TAG="svs-1.0.1"
+SATOSA_TAG="svs-1.0.2"
 
 # SVS tag or branch - You may also change this by checking out new versions or branches in the workdir
 SVS_TAG="2.1.0"
