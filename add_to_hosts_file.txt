@@ -1,4 +1,4 @@
-172.172.172.1   svs.inacademia.local
-172.172.172.2   op.inacademia.local
-172.172.172.100 rp.inacademia.local                  
-172.172.172.200  idp.inacademia.local
+172.21.10.2   svs.inacademia.local
+172.21.10.3   op.inacademia.local
+172.21.10.100 rp.inacademia.local
+172.21.10.200 idp.inacademia.local

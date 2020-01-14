@@ -16,8 +16,8 @@ config:
       - {contact_type: technical, given_name: InAcademia, sur_name: Technical Support, email_address: tech@inacademia.org}
 
     metadata:
-        #local: [idp.xml]
-        local: [shib-idp.xml]
+        local: [idp.xml]
+        #local: [shib-idp.xml]
         #mdq: ['https://md.nordu.net/']
 
     entityid: 'https://inacademia.local/metadata/inacademia-simple-validation.xml'

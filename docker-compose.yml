@@ -1,0 +1,142 @@
+---
+version: "2"
+
+services:
+
+  idp:
+    build:
+      # uncomment for idp and ipd2
+      context: ./idp
+      # uncomment for shib-idp:
+      #context: ./shib-idp
+    image: inacademia-idp:v1
+    extra_hosts:
+      - svs.inacademia.local:172.21.10.2
+      - op.inacademia.local:172.21.10.3
+      - rp.inacademia.local:172.21.10.100
+      - idp.inacademia.local:172.21.10.200
+    hostname: idp
+    volumes:
+      # uncomment for idp:
+      #- "./idp/config/metadata:/var/www/simplesamlphp/metadata"
+      # uncomment idp2:
+      - "./idp2/config/metadata:/var/www/simplesamlphp/metadata"
+      # uncomment for shib-idp:
+      #- "./shib-idp/app:/tmp/app"
+      #- "./shib-idp/config:/tmp/config"
+    expose:
+      - 80
+      - 443
+    networks:
+      inacademia:
+        ipv4_address: 172.21.10.200
+
+  op:
+    build:
+      context: ./op
+    image: inacademia-op:v1
+    extra_hosts:
+      - svs.inacademia.local:172.21.10.2
+      - op.inacademia.local:172.21.10.3
+      - rp.inacademia.local:172.21.10.100
+      - idp.inacademia.local:172.21.10.200
+    hostname: op
+    environment:
+      BACKEND_PORT: tcp://172.21.10.2:80
+      REWRITE_LOCATION: 0
+    expose:
+      - 80
+      - 443
+    networks:
+      inacademia:
+        ipv4_address: 172.21.10.3
+
+  rp:
+    build:
+      context: ./rp
+    image: inacademia-rp:v1
+    extra_hosts:
+      - svs.inacademia.local:172.21.10.2
+      - op.inacademia.local:172.21.10.3
+      - rp.inacademia.local:172.21.10.100
+      - idp.inacademia.local:172.21.10.200
+    hostname: rp
+    expose:
+      - 80
+      - 443
+    networks:
+      inacademia:
+        ipv4_address: 172.21.10.100
+
+  svs-dev:
+    build:
+      context: ./svs-dev
+    image: inacademia-svs-dev:v1
+    extra_hosts:
+      - svs.inacademia.local:172.21.10.2
+      - op.inacademia.local:172.21.10.3
+      - rp.inacademia.local:172.21.10.100
+      - idp.inacademia.local:172.21.10.200
+    hostname: svs
+    volumes:
+      - ./svs-dev/config/production:/var/svs
+      - ./svs-dev/config/cdb:/etc/cdb
+      - ./svs-dev/workdir:/opt/workdir
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+      - ~/.ssh/id_rsa_inacademia:/tmp/inacademia/id_rsa_inacademia
+    environment:
+      SATOSA_TAG: svs-1.0.2
+      SVS_TAG: 2.1.0
+      PROXY_PORT: 80
+      DATA_DIR: /var/svs
+      SATOSA_STATE_ENCRYPTION_KEY: 1fa0dafd36d9d2c8401b943sk4kwde954e2016cf3f37fa1f67bbffe6c4f2f78e
+      SATOSA_USER_ID_HASH_SALT: 6f692915a7df20d9d4be17a70djdieff04585b0ab231825b7a15ed5d6140aa1e
+    working_dir: /var/svs
+    expose:
+      - 80
+      - 443
+    networks:
+      inacademia:
+        ipv4_address: 172.21.10.2
+
+  svs:
+    build:
+      context: ./svs
+      args:
+        SATOSA_VERSION: svs-1.0.2
+        SVS_VERSION: 2.1.0
+    image: inacademia-svs:v1
+    extra_hosts:
+      - svs.inacademia.local:172.21.10.2
+      - op.inacademia.local:172.21.10.3
+      - rp.inacademia.local:172.21.10.100
+      - idp.inacademia.local:172.21.10.200
+    hostname: svs
+    volumes:
+      - ./svs-dev/config/production:/var/svs
+      - ./svs-dev/config/cdb:/etc/cdb
+      - ./svs-dev/workdir:/opt/workdir
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    environment:
+      PROXY_PORT: 80
+      DATA_DIR: /var/svs
+      SATOSA_STATE_ENCRYPTION_KEY: 1fa0dafd36d9d2c8401b943sk4kwde954e2016cf3f37fa1f67bbffe6c4f2f78e
+      SATOSA_USER_ID_HASH_SALT: 6f692915a7df20d9d4be17a70djdieff04585b0ab231825b7a15ed5d6140aa1e
+    working_dir: /var/svs
+    expose:
+      - 80
+      - 443
+    networks:
+      inacademia:
+        ipv4_address: 172.21.10.2
+
+networks:
+  inacademia:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.21.10.0/24
+          gateway: 172.21.10.1
