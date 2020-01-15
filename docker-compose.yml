@@ -84,14 +84,14 @@ services:
       - ./svs-dev/workdir:/opt/workdir
       - /etc/passwd:/etc/passwd:ro
       - /etc/group:/etc/group:ro
-      - ~/.ssh/id_rsa_inacademia:/tmp/inacademia/id_rsa_inacademia
+      - ${GIT_KEY}:/tmp/inacademia/id_rsa_inacademia
     environment:
-      SATOSA_TAG: svs-1.0.2
-      SVS_TAG: 2.1.0
+      SATOSA_TAG: ${SATOSA_VERSION}
+      SVS_TAG: ${SVS_VERSION}
       PROXY_PORT: 80
       DATA_DIR: /var/svs
-      SATOSA_STATE_ENCRYPTION_KEY: 1fa0dafd36d9d2c8401b943sk4kwde954e2016cf3f37fa1f67bbffe6c4f2f78e
-      SATOSA_USER_ID_HASH_SALT: 6f692915a7df20d9d4be17a70djdieff04585b0ab231825b7a15ed5d6140aa1e
+      SATOSA_STATE_ENCRYPTION_KEY: ${SATOSA_KEY}
+      SATOSA_USER_ID_HASH_SALT: ${SATOSA_SALT}
     working_dir: /var/svs
     expose:
       - 80
@@ -104,8 +104,8 @@ services:
     build:
       context: ./svs
       args:
-        SATOSA_VERSION: svs-1.0.2
-        SVS_VERSION: 2.1.0
+        SATOSA_VERSION: ${SATOSA_VERSION}
+        SVS_VERSION: ${SVS_VERSION}
     image: inacademia-svs:v1
     extra_hosts:
       - svs.inacademia.local:172.21.10.2
@@ -122,8 +122,8 @@ services:
     environment:
       PROXY_PORT: 80
       DATA_DIR: /var/svs
-      SATOSA_STATE_ENCRYPTION_KEY: 1fa0dafd36d9d2c8401b943sk4kwde954e2016cf3f37fa1f67bbffe6c4f2f78e
-      SATOSA_USER_ID_HASH_SALT: 6f692915a7df20d9d4be17a70djdieff04585b0ab231825b7a15ed5d6140aa1e
+      SATOSA_STATE_ENCRYPTION_KEY: ${SATOSA_KEY}
+      SATOSA_USER_ID_HASH_SALT: ${SATOSA_SALT}
     working_dir: /var/svs
     expose:
       - 80
