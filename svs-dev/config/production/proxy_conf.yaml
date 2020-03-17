@@ -17,6 +17,8 @@ LOGGING:
   formatters:
     simple:
       format: "[%(asctime)-19.19s] [%(levelname)-5.5s]: %(message)s"
+    simpler:
+      format: "%(message)s"
   handlers:
     console:
       class: logging.StreamHandler
@@ -31,6 +33,14 @@ LOGGING:
       maxBytes: 10485760 # 10MB
       backupCount: 20
       encoding: utf8
+    transaction_flow_file_handler:
+      class: logging.handlers.RotatingFileHandler
+      level: DEBUG
+      formatter: simpler
+      filename: transaction_flow.log
+      maxBytes: 10485760 # 10MB
+      backupCount: 20
+      encoding: utf8
   loggers:
     satosa:
       level: DEBUG
@@ -39,6 +49,10 @@ LOGGING:
     svs:
       level: DEBUG
       handlers: [console]
+      propagate: no
+    transaction_flow:
+      level: DEBUG
+      handlers: [console, transaction_flow_file_handler]
       propagate: no
   root:
     level: DEBUG
