@@ -6,6 +6,7 @@
       "institution"
     ],
     "allowed_scope_values": [
+      "member",
       "student",
       "affiliated",
       "employee",

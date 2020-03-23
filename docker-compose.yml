@@ -18,9 +18,9 @@ services:
     hostname: idp
     volumes:
       # uncomment for idp:
-      #- "./idp/config/metadata:/var/www/simplesamlphp/metadata"
+      - "./idp/config/metadata:/var/www/simplesamlphp/metadata"
       # uncomment idp2:
-      - "./idp2/config/metadata:/var/www/simplesamlphp/metadata"
+      #- "./idp2/config/metadata:/var/www/simplesamlphp/metadata"
       # uncomment for shib-idp:
       #- "./shib-idp/app:/tmp/app"
       #- "./shib-idp/config:/tmp/config"
@@ -47,6 +47,8 @@ services:
     expose:
       - 80
       - 443
+    depends_on:
+      - "svs-dev"
     networks:
       inacademia:
         ipv4_address: 172.21.10.3
@@ -64,6 +66,8 @@ services:
     expose:
       - 80
       - 443
+    depends_on:
+      - "op"
     networks:
       inacademia:
         ipv4_address: 172.21.10.100
@@ -88,38 +92,6 @@ services:
     environment:
       SATOSA_TAG: ${SATOSA_VERSION}
       SVS_TAG: ${SVS_VERSION}
-      PROXY_PORT: 80
-      DATA_DIR: /var/svs
-      SATOSA_STATE_ENCRYPTION_KEY: ${SATOSA_KEY}
-      SATOSA_USER_ID_HASH_SALT: ${SATOSA_SALT}
-    working_dir: /var/svs
-    expose:
-      - 80
-      - 443
-    networks:
-      inacademia:
-        ipv4_address: 172.21.10.2
-
-  svs:
-    build:
-      context: ./svs
-      args:
-        SATOSA_VERSION: ${SATOSA_VERSION}
-        SVS_VERSION: ${SVS_VERSION}
-    image: inacademia-svs:v1
-    extra_hosts:
-      - svs.inacademia.local:172.21.10.2
-      - op.inacademia.local:172.21.10.3
-      - rp.inacademia.local:172.21.10.100
-      - idp.inacademia.local:172.21.10.200
-    hostname: svs
-    volumes:
-      - ./svs-dev/config/production:/var/svs
-      - ./svs-dev/config/cdb:/etc/cdb
-      - ./svs-dev/workdir:/opt/workdir
-      - /etc/passwd:/etc/passwd:ro
-      - /etc/group:/etc/group:ro
-    environment:
       PROXY_PORT: 80
       DATA_DIR: /var/svs
       SATOSA_STATE_ENCRYPTION_KEY: ${SATOSA_KEY}
