@@ -119,6 +119,7 @@ Build the OP container by running
 No config changes are needed
 ### Running the OP container
 Run the OP container by running
-```docker-compose run rp```
+```docker-compose run op```
+
 
 
