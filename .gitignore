@@ -104,7 +104,7 @@ venv.bak/
 .mypy_cache/
 
 # workdirs
-*/workdir/
+*/workdir/*
 
 # eclipse
 .project

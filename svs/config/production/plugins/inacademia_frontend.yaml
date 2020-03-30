@@ -5,6 +5,7 @@ config:
   client_db_path: /etc/cdb/cdb.json
   entity_id_map_path: /var/svs/entityids.json
   backend_name: InAcademiaBackend
+  sub_hash_salt: QZof6gyfyW4fk4EH
   provider:
     client_registration_supported: Yes
     response_types_supported: ["code", "id_token token"]

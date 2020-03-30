@@ -16,4 +16,4 @@ COPY config/metadata /var/www/simplesamlphp/metadata
 
 RUN apt-get update && apt-get install -y vim
 
-ENTRYPOINT service apache2 start && /bin/bash
+ENTRYPOINT [ "/usr/sbin/apachectl", "-DFOREGROUND" ]

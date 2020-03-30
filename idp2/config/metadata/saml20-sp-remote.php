@@ -7,84 +7,84 @@
 
 $metadata['https://inacademia.local/metadata/inacademia-simple-validation.xml'] = array (
   'entityid' => 'https://inacademia.local/metadata/inacademia-simple-validation.xml',
-  'description' => 
+  'description' =>
   array (
   ),
-  'OrganizationName' => 
+  'OrganizationName' =>
   array (
     'en' => 'InAcademia',
   ),
-  'name' => 
+  'name' =>
   array (
     'en' => 'InAcademia Affiliation Validation Service',
   ),
-  'OrganizationDisplayName' => 
+  'OrganizationDisplayName' =>
   array (
     'en' => 'InAcademia',
   ),
-  'url' => 
+  'url' =>
   array (
     'en' => 'https://inacademia.org/about',
   ),
-  'OrganizationURL' => 
+  'OrganizationURL' =>
   array (
     'en' => 'https://inacademia.org/about',
   ),
-  'contacts' => 
+  'contacts' =>
   array (
-    0 => 
+    0 =>
     array (
       'contactType' => 'support',
       'givenName' => 'InAcademia',
       'surName' => 'Enduser Support',
-      'emailAddress' => 
+      'emailAddress' =>
       array (
         0 => 'help@inacademia.org',
       ),
     ),
-    1 => 
+    1 =>
     array (
       'contactType' => 'technical',
       'givenName' => 'InAcademia',
       'surName' => 'Administrative Support',
-      'emailAddress' => 
+      'emailAddress' =>
       array (
         0 => 'admin@inacademia.org',
       ),
     ),
-    2 => 
+    2 =>
     array (
       'contactType' => 'technical',
       'givenName' => 'InAcademia',
       'surName' => 'Technical Support',
-      'emailAddress' => 
+      'emailAddress' =>
       array (
         0 => 'tech@inacademia.org',
       ),
     ),
   ),
   'metadata-set' => 'saml20-sp-remote',
-  'AssertionConsumerService' => 
+  'AssertionConsumerService' =>
   array (
-    0 => 
+    0 =>
     array (
       'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
       'Location' => 'https://op.inacademia.local/InAcademiaBackend/acs/post',
       'index' => 1,
     ),
   ),
-  'SingleLogoutService' => 
+  'SingleLogoutService' =>
   array (
   ),
   'NameIDFormat' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:persistent',
-  'attributes.required' => 
+  'attributes.required' =>
   array (
     0 => 'urn:oid:1.3.6.1.4.1.5923.1.1.1.9',
   ),
   'attributes.NameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
-  'keys' => 
+  'keys' =>
   array (
-    0 => 
+    0 =>
     array (
       'encryption' => false,
       'signing' => true,
@@ -127,36 +127,36 @@ PP2NizZ8nBxMClkJF1jRDvuVWxErrJsqW2fzuwbl2HUe6XiJoV7jqBHKFqIW
   ),
   'validate.authnrequest' => false,
   'saml20.sign.assertion' => true,
-  'UIInfo' => 
+  'UIInfo' =>
   array (
-    'DisplayName' => 
+    'DisplayName' =>
     array (
       'en' => 'InAcademia Affiliation Validation Service',
     ),
-    'Description' => 
+    'Description' =>
     array (
       'en' => 'InAcademia validates the affiliation status (student, faculty, staff) assigned to you by your home institution. This data then is provided in anonymized form to services which for example grant student discounts. While your Institution assists in validation your affiliation, it has no relation with the Service requesting to validate your affiliation.',
     ),
-    'InformationURL' => 
+    'InformationURL' =>
     array (
       'en' => 'https://inacademia.org/about',
     ),
-    'PrivacyStatementURL' => 
+    'PrivacyStatementURL' =>
     array (
       'en' => 'https://inacademia.org/about/privacy',
     ),
-    'Keywords' => 
+    'Keywords' =>
     array (
-      'en' => 
+      'en' =>
       array (
         0 => 'Affiliation',
         1 => 'Validation',
         2 => 'Eligibility',
       ),
     ),
-    'Logo' => 
+    'Logo' =>
     array (
-      0 => 
+      0 =>
       array (
         'url' => 'https://inacademia.org/static/logo.png',
         'height' => 60,
