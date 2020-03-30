@@ -105,3 +105,8 @@ venv.bak/
 
 # workdirs
 */workdir/*
+
+# eclipse
+.project
+.pydevproject
+.settings
