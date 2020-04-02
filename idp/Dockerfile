@@ -16,4 +16,4 @@ COPY config/metadata /var/www/simplesamlphp/metadata
 
 RUN apt-get update && apt-get install -y vim
 
-ENTRYPOINT [ "/usr/sbin/apachectl", "-DFOREGROUND" ]
+ENTRYPOINT /bin/rm -f /var/run/apache2/apache2.pid; /usr/sbin/apache2ctl -DFOREGROUND
