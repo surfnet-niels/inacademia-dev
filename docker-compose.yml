@@ -8,13 +8,13 @@ services:
       # uncomment for idp and ipd2
       context: ./idp
       # uncomment for shib-idp:
-      #context: ./shib-idp
+      # context: ./shib-idp
     image: inacademia-idp:v1
     extra_hosts:
       - svs.inacademia.local:172.21.10.2
       - op.inacademia.local:172.21.10.3
       - rp.inacademia.local:172.21.10.100
-      - idp.inacademia.local:172.21.10.200
+      - idp.inacademia.local idp:172.21.10.200
     hostname: idp
     volumes:
       # uncomment for idp:
@@ -27,6 +27,7 @@ services:
     expose:
       - 80
       - 443
+      - 389
     networks:
       inacademia:
         ipv4_address: 172.21.10.200
