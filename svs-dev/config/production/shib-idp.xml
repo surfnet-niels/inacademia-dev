@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:req-attr="urn:oasis:names:tc:SAML:protocol:ext:req-attr" entityID="https://idp.inacademia.local/idp/shibboleth">
-  <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-    <Extensions>
-      <shibmd:Scope regexp="false">inacademia.local</shibmd:Scope>
-      <mdui:UIInfo>
-        <mdui:DisplayName xml:lang="en">Shib test idp</mdui:DisplayName>
-        <mdui:Description xml:lang="en">Shib test idp at idp.inacademia.local</mdui:Description>
-      </mdui:UIInfo>
-    </Extensions>
-    <!-- First signing certificate is BackChannel, the Second is FrontChannel -->
-    <KeyDescriptor use="signing">
-      <ds:KeyInfo>
-        <ds:X509Data>
-          <ds:X509Certificate>
+<EntityDescriptor  xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:req-attr="urn:oasis:names:tc:SAML:protocol:ext:req-attr" entityID="https://idp.inacademia.local/idp/shibboleth">
+    <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <Extensions>
+            <shibmd:Scope regexp="false">inacademia.local</shibmd:Scope>
+            <mdui:UIInfo>
+                <mdui:DisplayName xml:lang="en">Shib test idp</mdui:DisplayName>
+                <mdui:Description xml:lang="en">Shib test idp at idp.inacademia.local</mdui:Description>
+            </mdui:UIInfo>
+        </Extensions>
+        <!-- First signing certificate is BackChannel, the Second is FrontChannel -->
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                    <ds:X509Data>
+                        <ds:X509Certificate>
 MIIEPDCCAqSgAwIBAgIVAN0pClkxpLiWoTxmYRVmwc6ywITSMA0GCSqGSIb3DQEB
 CwUAMB8xHTAbBgNVBAMMFGlkcC5pbmFjYWRlbWlhLmxvY2FsMB4XDTE5MTIxMzE2
 MTkxMloXDTM5MTIxMzE2MTkxMlowHzEdMBsGA1UEAwwUaWRwLmluYWNhZGVtaWEu
@@ -37,13 +37,13 @@ mlmxNByvewze4+v/sTP3xQXFxU9y4uZ+g++OIa5dEcShKEN9W2+jaYSw/Ijx6Q+B
 SRD/jiUyKzB7a53npdezCpNR1bPrXNZMnF/WszbdNwq8mocgXAsTfMjMtTsjPDMM
 AAfARY5xlBFyUQG7oTJphWz/wZUZutP40nsG0NLa9Hk=
                         </ds:X509Certificate>
-        </ds:X509Data>
-      </ds:KeyInfo>
-    </KeyDescriptor>
-    <KeyDescriptor use="signing">
-      <ds:KeyInfo>
-        <ds:X509Data>
-          <ds:X509Certificate>
+                    </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                    <ds:X509Data>
+                        <ds:X509Certificate>
 MIIEOzCCAqOgAwIBAgIUX/61eJlkCh5nx1bu8IoNEURwbLwwDQYJKoZIhvcNAQEL
 BQAwHzEdMBsGA1UEAwwUaWRwLmluYWNhZGVtaWEubG9jYWwwHhcNMTkxMjEzMTYx
 OTExWhcNMzkxMjEzMTYxOTExWjAfMR0wGwYDVQQDDBRpZHAuaW5hY2FkZW1pYS5s
@@ -68,13 +68,13 @@ LKaC6O2qMyHVy5jtGP7JSrceuxC5fohQg+w+K7xbzXz0klEfRnIBF0JpuVOejDYv
 Z3XDwNI3by3l/qk6OqVIOg58nvE1YBL9QJaOXka+Mds4s9dX4xqxJTyezD2Z/fSp
 MVp/8FSD7qx7Vom3Oo/3vqfSZYGMw5r04n2YoUsvpQ==
                         </ds:X509Certificate>
-        </ds:X509Data>
-      </ds:KeyInfo>
-    </KeyDescriptor>
-    <KeyDescriptor use="encryption">
-      <ds:KeyInfo>
-        <ds:X509Data>
-          <ds:X509Certificate>
+                    </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <KeyDescriptor use="encryption">
+            <ds:KeyInfo>
+                    <ds:X509Data>
+                        <ds:X509Certificate>
 MIIEPDCCAqSgAwIBAgIVAIHX3SjQQT/6T+i4ZL22CXKrr6oyMA0GCSqGSIb3DQEB
 CwUAMB8xHTAbBgNVBAMMFGlkcC5pbmFjYWRlbWlhLmxvY2FsMB4XDTE5MTIxMzE2
 MTkxMloXDTM5MTIxMzE2MTkxMlowHzEdMBsGA1UEAwwUaWRwLmluYWNhZGVtaWEu
@@ -99,27 +99,27 @@ HXNrkzl7kHTMr7Hwec6ujVBFphNyZ1RgGwBqWUxLSOrwbW1AIp5KqqtUTPm2oUl8
 v3e2TyNcWiX7PQghRSnFEkPDz3tr4voy+Q/I9F465LFpVxHAgb2EyDm5yadx5mkP
 xoXVFNjahA3wbKVKVxuh4lW4wLTA9b6qWK6cXtV4ItM=
                         </ds:X509Certificate>
-        </ds:X509Data>
-      </ds:KeyInfo>
-    </KeyDescriptor>
-    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.inacademia.local/idp/profile/SAML2/Redirect/SLO"/>
-    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.inacademia.local/idp/profile/SAML2/POST/SLO"/>
-    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp.inacademia.local/idp/profile/SAML2/POST-SimpleSign/SLO"/>
-    <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
-    <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
-    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" req-attr:supportsRequestedAttributes="true" Location="https://idp.inacademia.local/idp/profile/SAML2/POST/SSO"/>
-    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" req-attr:supportsRequestedAttributes="true" Location="https://idp.inacademia.local/idp/profile/SAML2/POST-SimpleSign/SSO"/>
-    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" req-attr:supportsRequestedAttributes="true" Location="https://idp.inacademia.local/idp/profile/SAML2/Redirect/SSO"/>
-  </IDPSSODescriptor>
-  <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-    <Extensions>
-      <shibmd:Scope regexp="false">inacademia.local</shibmd:Scope>
-    </Extensions>
-    <!-- First signing certificate is BackChannel, the Second is FrontChannel -->
-    <KeyDescriptor use="signing">
-      <ds:KeyInfo>
-        <ds:X509Data>
-          <ds:X509Certificate>
+                    </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.inacademia.local/idp/profile/SAML2/Redirect/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.inacademia.local/idp/profile/SAML2/POST/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp.inacademia.local/idp/profile/SAML2/POST-SimpleSign/SLO"/>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" req-attr:supportsRequestedAttributes="true" Location="https://idp.inacademia.local/idp/profile/SAML2/POST/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" req-attr:supportsRequestedAttributes="true" Location="https://idp.inacademia.local/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" req-attr:supportsRequestedAttributes="true" Location="https://idp.inacademia.local/idp/profile/SAML2/Redirect/SSO"/>
+    </IDPSSODescriptor>
+    <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <Extensions>
+            <shibmd:Scope regexp="false">inacademia.local</shibmd:Scope>
+        </Extensions>
+        <!-- First signing certificate is BackChannel, the Second is FrontChannel -->
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                    <ds:X509Data>
+                        <ds:X509Certificate>
 MIIEPDCCAqSgAwIBAgIVAN0pClkxpLiWoTxmYRVmwc6ywITSMA0GCSqGSIb3DQEB
 CwUAMB8xHTAbBgNVBAMMFGlkcC5pbmFjYWRlbWlhLmxvY2FsMB4XDTE5MTIxMzE2
 MTkxMloXDTM5MTIxMzE2MTkxMlowHzEdMBsGA1UEAwwUaWRwLmluYWNhZGVtaWEu
@@ -144,13 +144,13 @@ mlmxNByvewze4+v/sTP3xQXFxU9y4uZ+g++OIa5dEcShKEN9W2+jaYSw/Ijx6Q+B
 SRD/jiUyKzB7a53npdezCpNR1bPrXNZMnF/WszbdNwq8mocgXAsTfMjMtTsjPDMM
 AAfARY5xlBFyUQG7oTJphWz/wZUZutP40nsG0NLa9Hk=
                         </ds:X509Certificate>
-        </ds:X509Data>
-      </ds:KeyInfo>
-    </KeyDescriptor>
-    <KeyDescriptor use="signing">
-      <ds:KeyInfo>
-        <ds:X509Data>
-          <ds:X509Certificate>
+                    </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                    <ds:X509Data>
+                        <ds:X509Certificate>
 MIIEOzCCAqOgAwIBAgIUX/61eJlkCh5nx1bu8IoNEURwbLwwDQYJKoZIhvcNAQEL
 BQAwHzEdMBsGA1UEAwwUaWRwLmluYWNhZGVtaWEubG9jYWwwHhcNMTkxMjEzMTYx
 OTExWhcNMzkxMjEzMTYxOTExWjAfMR0wGwYDVQQDDBRpZHAuaW5hY2FkZW1pYS5s
@@ -175,13 +175,13 @@ LKaC6O2qMyHVy5jtGP7JSrceuxC5fohQg+w+K7xbzXz0klEfRnIBF0JpuVOejDYv
 Z3XDwNI3by3l/qk6OqVIOg58nvE1YBL9QJaOXka+Mds4s9dX4xqxJTyezD2Z/fSp
 MVp/8FSD7qx7Vom3Oo/3vqfSZYGMw5r04n2YoUsvpQ==
                         </ds:X509Certificate>
-        </ds:X509Data>
-      </ds:KeyInfo>
-    </KeyDescriptor>
-    <KeyDescriptor use="encryption">
-      <ds:KeyInfo>
-        <ds:X509Data>
-          <ds:X509Certificate>
+                    </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <KeyDescriptor use="encryption">
+            <ds:KeyInfo>
+                    <ds:X509Data>
+                        <ds:X509Certificate>
 MIIEPDCCAqSgAwIBAgIVAIHX3SjQQT/6T+i4ZL22CXKrr6oyMA0GCSqGSIb3DQEB
 CwUAMB8xHTAbBgNVBAMMFGlkcC5pbmFjYWRlbWlhLmxvY2FsMB4XDTE5MTIxMzE2
 MTkxMloXDTM5MTIxMzE2MTkxMlowHzEdMBsGA1UEAwwUaWRwLmluYWNhZGVtaWEu
@@ -206,9 +206,9 @@ HXNrkzl7kHTMr7Hwec6ujVBFphNyZ1RgGwBqWUxLSOrwbW1AIp5KqqtUTPm2oUl8
 v3e2TyNcWiX7PQghRSnFEkPDz3tr4voy+Q/I9F465LFpVxHAgb2EyDm5yadx5mkP
 xoXVFNjahA3wbKVKVxuh4lW4wLTA9b6qWK6cXtV4ItM=
                         </ds:X509Certificate>
-        </ds:X509Data>
-      </ds:KeyInfo>
-    </KeyDescriptor>
-    <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.inacademia.local/idp/profile/SAML2/SOAP/AttributeQuery"/>
-  </AttributeAuthorityDescriptor>
+                    </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp.inacademia.local/idp/profile/SAML2/SOAP/AttributeQuery"/>
+    </AttributeAuthorityDescriptor>
 </EntityDescriptor>

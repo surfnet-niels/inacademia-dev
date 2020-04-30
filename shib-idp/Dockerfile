@@ -9,4 +9,4 @@ RUN apt -y clean
 
 EXPOSE 443
 
-ENTRYPOINT /bin/bash
+ENTRYPOINT /tmp/app/start.sh
