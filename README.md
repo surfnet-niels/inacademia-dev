@@ -106,6 +106,15 @@ satosa -> satosa as pulled from git@github.com:inacademia-development/SATOSA.git
 svs -> svs as pulled from git@github.com:inacademia-development/svs.git@SVS_VERSION
 svs_venv -> virtualenv deployed version of svs
 ```
+## Using op
+### Building the OP container
+Build the OP container by running
+```docker-compose build op```
+No config changes are needed
+### Running the OP container
+Run the OP container by running
+```docker-compose run op```
+
 ## Using rp
 ### Building the RP container
 Build the RP container by running
@@ -119,14 +128,7 @@ You can now go to ```https://rp.inacademia.local/protected/``` to start of a val
 Note that at startup of the Apache service, it tries to contact the OP to download the OP configuration from
 ```https://op.inacademia.local/.well-known/openid-configuration```. **Therefor you must start the OP and SVS containers before starting the RP, or Apache will fail** This will yield an "Internal Server Error" upon accessing the RP in your browser
 
-## Using op
-### Building the OP container
-Build the OP container by running
-```docker-compose build op```
-No config changes are needed
-### Running the OP container
-Run the OP container by running
-```docker-compose run op```
+
 
 
 
