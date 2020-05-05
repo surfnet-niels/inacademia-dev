@@ -77,6 +77,13 @@ You can use SATOSA_VERSION and/or SVS_VERSION to install specific versions into 
 When buildig the container will need to query the IdP for metadata. Therefor make sure the IdP is up and running and metadata is available at
 ```https://idp.inacademia.local/saml2/idp/metadata.php```
 
+To make sure svs-dev has the right IdP metadata, you must manually put te metadata in the right place:
+```
+cd svs-dev/config/production/
+wget --no-check-certificate https://idp.inacademia.local/saml2/idp/metadata.php -O idp.xml
+```
+Please remember if you switch IdP types, you will need to repeat this
+
 Now build the svs-dev container by running
 ```docker-compose build svs-dev```
 
