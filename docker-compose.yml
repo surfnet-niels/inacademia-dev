@@ -42,14 +42,14 @@ services:
       - rp.inacademia.local:172.21.10.100
       - idp.inacademia.local:172.21.10.200
     hostname: op
+    volumes:
+      - ./${POUND_SSL_DIR}:/etc/ssl
     environment:
       BACKEND_PORT: tcp://172.21.10.2:80
-      REWRITE_LOCATION: 0
+      REWRITE_LOCATION: 1
     expose:
       - 80
       - 443
-    depends_on:
-      - "svs-dev"
     networks:
       inacademia:
         ipv4_address: 172.21.10.3
@@ -67,8 +67,8 @@ services:
     expose:
       - 80
       - 443
-    depends_on:
-      - "op"
+#    depends_on:
+#      - "idp"
     networks:
       inacademia:
         ipv4_address: 172.21.10.100
@@ -76,6 +76,7 @@ services:
   svs-dev:
     build:
       context: ./svs-dev
+#      context: ./svs
     image: inacademia-svs-dev:v1
     extra_hosts:
       - svs.inacademia.local:172.21.10.2
@@ -98,6 +99,8 @@ services:
       SATOSA_STATE_ENCRYPTION_KEY: ${SATOSA_KEY}
       SATOSA_USER_ID_HASH_SALT: ${SATOSA_SALT}
     working_dir: /var/svs
+#    depends_on:
+#      - "op"
     expose:
       - 80
       - 443
