@@ -1,10 +1,10 @@
 #!/bin/bash
 
-count=`find /etc/ssl/private/ -type f,l -a -name \*.pem 2>/dev/null |wc -l`
-if [ $count -eq 0 ]; then
-   make-ssl-cert generate-default-snakeoil
-   cat /etc/ssl/private/ssl-cert-snakeoil.key /etc/ssl/certs/ssl-cert-snakeoil.pem > /etc/ssl/private/server.pem
-fi
+#count=`find /etc/ssl/private/ -type f,l -a -name \*.pem 2>/dev/null |wc -l`
+#if [ $count -eq 0 ]; then
+#   make-ssl-cert generate-default-snakeoil
+#   cat /etc/ssl/private/ssl-cert-snakeoil.key /etc/ssl/certs/ssl-cert-snakeoil.pem > /etc/ssl/private/server.pem
+#fi
 
 export HTTP_IP="127.0.0.1"
 export HTTP_PORT="80"
@@ -23,6 +23,7 @@ cat>/etc/pound/pound.cfg<<EOF
 User            "www-data"
 Group           "www-data"
 LogLevel        3
+LogFacility     -
 Alive           30
 Control         "/var/run/pound/poundctl.socket"
 Daemon          0
@@ -57,5 +58,5 @@ cat>>/etc/pound/pound.cfg<<EOF
 End
 EOF
 
-/usr/sbin/pound
-
+/usr/sbin/pound -v
+#/bin/bash
