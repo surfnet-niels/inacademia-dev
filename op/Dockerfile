@@ -6,6 +6,7 @@ RUN apt-get install -y pound ssl-cert
 RUN apt-get -y clean
 ADD app/start.sh /start.sh
 COPY config/etc/pound/pound.cfg /etc/pound/pound.cfg 
+CMD ["sh", "-c", "service rsyslog start ; tail -f /dev/null"]
 RUN chmod a+rx /start.sh
 VOLUME /etc/ssl
 ENV HTTP_PORT 80
