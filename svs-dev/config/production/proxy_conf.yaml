@@ -6,7 +6,7 @@ BACKEND_MODULES:
 FRONTEND_MODULES:
   - 'plugins/inacademia_frontend.yaml'
 MICRO_SERVICES:
-  - 'plugins/custom_alias.yaml'
+#  - 'plugins/custom_alias.yaml'
 #  - 'plugins/blacklist.yaml'
   - 'plugins/attribute_processor.yaml'
 #  - 'plugins/metainfo.yaml'
