@@ -2,4 +2,4 @@ module: svs.custom_alias.CustomAlias
 name: CustomAlias
 config:
     locations:
-        static: static
+        static: /opt/workdir/svs/static
