@@ -1,7 +1,12 @@
-FROM ubuntu:16.04
+#FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER InAcademia Team, tech@inacademia.org
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt -y update
+RUN ln -fs /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
+
+RUN apt-get install -y --no-install-recommends \
     git \
     python3-dev \
     build-essential \
