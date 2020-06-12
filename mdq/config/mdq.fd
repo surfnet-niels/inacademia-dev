@@ -9,6 +9,8 @@
 - when update:
     - load:
        - https://idp.inacademia.local/saml2/idp/metadata.php
+       - https://idp2.inacademia.local/saml2/idp/metadata.php
+       - https://idp3.inacademia.local/Shibboleth.sso/Metadata
        - /opt/metadata
     - break
 - when request:
