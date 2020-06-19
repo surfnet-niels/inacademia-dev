@@ -1,0 +1,12 @@
+module: svs.attribute_override.AttributeOverride
+name: AttributeOverride
+config:
+  overrides:
+    'urn:mace:idp.foo.barz':
+      # This will map affiliation values on foobar
+      affiliation: foobar
+      # And scoped_affiliation on affiliation
+      scoped_affiliation: affiliation
+    'some.other.ra':
+      # This will map foobar values on affiliation
+      foobar: affiliation
