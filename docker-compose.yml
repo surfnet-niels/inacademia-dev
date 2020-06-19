@@ -3,26 +3,25 @@ version: "2"
 
 services:
 
-  idp:
+  idp1:
     build:
-      context: ./idp
-    image: inacademia-idp:v1
+      context: ./idp1
+    image: inacademia-idp1:v1
     extra_hosts:
       - svs.inacademia.local:172.21.10.2
       - op.inacademia.local:172.21.10.3
       - mdq.inacademia.local:172.21.10.4
       - rp.inacademia.local:172.21.10.100
-      - idp.inacademia.local idp:172.21.10.200
-    hostname: idp
+      - idp1.inacademia.local idp:172.21.10.201
+    hostname: idp1
     volumes:
-      - "./idp/config/metadata:/var/www/simplesamlphp/metadata"
+      - "./idp1/config/metadata:/var/www/simplesamlphp/metadata"
     expose:
       - 80
       - 443
-      - 389
     networks:
       inacademia:
-        ipv4_address: 172.21.10.200
+        ipv4_address: 172.21.10.201
 
   idp2:
     build:
@@ -40,7 +39,6 @@ services:
     expose:
       - 80
       - 443
-      - 389
     networks:
       inacademia:
         ipv4_address: 172.21.10.202
@@ -76,7 +74,7 @@ services:
       - op.inacademia.local:172.21.10.3
       - mdq.inacademia.local:172.21.10.4
       - rp.inacademia.local:172.21.10.100
-      - idp.inacademia.local:172.21.10.200
+      - idp1.inacademia.local:172.21.10.201
       - idp2.inacademia.local:172.21.10.202
       - idp3.inacademia.local:172.21.10.203
     hostname: op
@@ -101,15 +99,13 @@ services:
       - op.inacademia.local:172.21.10.3
       - mdq.inacademia.local:172.21.10.4
       - rp.inacademia.local:172.21.10.100
-      - idp.inacademia.local:172.21.10.200
-      - idp.inacademia.local:172.21.10.202
+      - idp1.inacademia.local:172.21.10.201
+      - idp2.inacademia.local:172.21.10.202
       - idp3.inacademia.local:172.21.10.203
     hostname: rp
     expose:
       - 80
       - 443
-#    depends_on:
-#      - "idp"
     networks:
       inacademia:
         ipv4_address: 172.21.10.100
@@ -125,9 +121,9 @@ services:
       - op.inacademia.local:172.21.10.3
       - mdq.inacademia.local:172.21.10.4
       - rp.inacademia.local:172.21.10.100
-      - idp.inacademia.local:172.21.10.200
-      - idp2.inacademia.local:172.21.10.200
-      - idp3.inacademia.local:172.21.10.203      
+      - idp1.inacademia.local:172.21.10.201
+      - idp2.inacademia.local:172.21.10.202
+      - idp3.inacademia.local:172.21.10.203
     hostname: mdq
     volumes:
       - ./mdq/config/mdq.fd:/opt/mdq.fd
@@ -135,6 +131,10 @@ services:
     expose:
       - 80
       - 443
+    depends_on:
+      - "idp1"
+      - "idp2"
+      - "idp3"
     networks:
       inacademia:
         ipv4_address: 172.21.10.4
@@ -148,9 +148,9 @@ services:
       - op.inacademia.local:172.21.10.3
       - mdq.inacademia.local:172.21.10.4
       - rp.inacademia.local:172.21.10.100
-      - idp.inacademia.local:172.21.10.200
+      - idp1.inacademia.local:172.21.10.201
       - idp2.inacademia.local:172.21.10.202
-      - idp3.inacademia.local:172.21.10.203      
+      - idp3.inacademia.local:172.21.10.203
     hostname: svs
     volumes:
       - ./svs-dev/config/production:/var/svs
@@ -167,10 +167,10 @@ services:
       SATOSA_STATE_ENCRYPTION_KEY: ${SATOSA_KEY}
       SATOSA_USER_ID_HASH_SALT: ${SATOSA_SALT}
     working_dir: /var/svs
-#    depends_on:
-#      - "op"
-#      - "rp"
-#      - "mdq"
+    depends_on:
+      - "op"
+      - "rp"
+      - "mdq"
     expose:
       - 80
     networks:
@@ -190,9 +190,9 @@ services:
       - op.inacademia.local:172.21.10.3
       - mdq.inacademia.local:172.21.10.4
       - rp.inacademia.local:172.21.10.100
-      - idp.inacademia.local:172.21.10.200
+      - idp1.inacademia.local:172.21.10.201
       - idp2.inacademia.local:172.21.10.202
-      - idp3.inacademia.local:172.21.10.203      
+      - idp3.inacademia.local:172.21.10.203
     hostname: svs
     volumes:
       - ./svs/config/production:/var/svs
@@ -212,7 +212,6 @@ services:
       - "mdq"
     expose:
       - 80
-      - 443
     networks:
       inacademia:
         ipv4_address: 172.21.10.2

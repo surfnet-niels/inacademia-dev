@@ -1,5 +1,5 @@
 # Site information
-idp_hostname: idp.inacademia.local
+idp_hostname: idp1.inacademia.local
 idp_sp: https://op.inacademia.local
 
 cert_hostname: "{{ idp_hostname }}"

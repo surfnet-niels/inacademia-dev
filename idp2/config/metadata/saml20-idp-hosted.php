@@ -24,10 +24,10 @@ $metadata['__DYNAMIC:1__'] = array(
 	'OrganizationDisplayName' => [
 		'en' => 'Test IdP TWO DisplayName',
 		'nl' => 'Test IdP TWO DisplayName'
-
+    ],
 	// X.509 key and certificate. Relative to the cert directory.
-	'privatekey' => 'idp.inacademia.local.pem',
-	'certificate' => 'idp.inacademia.local.crt',
+	'privatekey' => 'idp2.inacademia.local.pem',
+	'certificate' => 'idp2.inacademia.local.crt',
 
 	/*
 	 * Authentication source to use. Must be one that is configured in
