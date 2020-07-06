@@ -8,7 +8,7 @@ FRONTEND_MODULES:
 MICRO_SERVICES:
   - 'plugins/custom_alias.yaml'
   - 'plugins/metainfo.yaml'
-  - 'plugins/attribute_override.yaml'
+#  - 'plugins/attribute_override.yaml'
 #  - 'plugins/blacklist.yaml'
   - 'plugins/attribute_processor.yaml'
   - 'plugins/custom_logging.yaml'
