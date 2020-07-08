@@ -7,7 +7,7 @@ RUN apt -y update
 RUN ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 
-RUN apt -y update && apt -y full-upgrade && apt -y autoremove && apt install -y --no-install-recommends sudo dnsutils git software-properties-common
+RUN apt -y update && apt -y full-upgrade && apt -y autoremove && apt install -y --no-install-recommends sudo dnsutils git software-properties-common curl
 RUN apt-add-repository -y ppa:ansible/ansible && apt -y update && apt install -y ansible
 RUN apt -y clean
 

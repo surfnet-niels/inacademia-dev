@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This work is based on https://github.com/ConsortiumGARR/idem-tutorials/blob/master/idem-fedops/HOWTO-Shibboleth/Identity%20Provider/Debian-Ubuntu/HOWTO%20Install%20and%20Configure%20a%20Shibboleth%20IdP%20v3.4.x%20on%20Debian-Ubuntu%20Linux%20with%20Apache2%20%2B%20Jetty9.md
-echo "127.0.0.1 idp localhost" >> /etc/hosts
+echo "127.0.0.1 idp3 localhost" >> /etc/hosts
 
 export DEBIAN_FRONTEND=noninteractive
 echo "debconf slapd/password1 password test" | debconf-set-selections
@@ -22,12 +22,12 @@ source /etc/environment
 export JAVA_HOME=/usr/lib/jvm/default-java
 
 # create self signed certs and put them in the right place if needed
-FILE=/etc/ssl/private/idp.inacademia.local.key
+FILE=/etc/ssl/private/idp3.inacademia.local.key
 if [ -f "$FILE" ]; then
     echo "$FILE exist"
 else
     echo "$FILE does not exist, creating"
-    openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/idp.inacademia.local.key -out /etc/ssl/certs/idp.inacademia.local.crt -nodes -days 1095 -subj '/CN=idp.inacademia.local'
+    openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/idp3.inacademia.local.key -out /etc/ssl/certs/idp3.inacademia.local.crt -nodes -days 1095 -subj '/CN=idp3.inacademia.local'
 fi
 
 
