@@ -2,6 +2,8 @@ attributes:
   affiliation:
     saml: [eduPersonAffiliation, eduPersonScopedAffiliation]
     openid: [affiliation]
+  entitlement:
+    saml: [eduPersonEntitlement]
   scoped_affiliation:
     saml: [eduPersonScopedAffiliation]
   domain:
