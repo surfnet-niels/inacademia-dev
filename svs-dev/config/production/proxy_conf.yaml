@@ -45,11 +45,11 @@ LOGGING:
   loggers:
     satosa:
       level: DEBUG
-      handlers: [console]
+      handlers: [console, timed_info_file_handler]
       propagate: no
     svs:
       level: DEBUG
-      handlers: [console]
+      handlers: [console, timed_info_file_handler]
       propagate: no
     transaction_flow:
       level: DEBUG
@@ -57,5 +57,5 @@ LOGGING:
       propagate: no
   root:
     level: DEBUG
-    handlers: [info_file_handler]
+    handlers: [info_file_handler, timed_info_file_handler]
 
