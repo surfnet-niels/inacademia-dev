@@ -44,5 +44,5 @@ COPY config/start.sh /tmp/inacademia/start.sh
 RUN echo "SATOSA: " $SATOSA_VERSION > /tmp/inacademia/version
 RUN echo "SVS: " $SVS_VERSION >> /tmp/inacademia/version
 
-#ENTRYPOINT ["/tmp/inacademia/start.sh"]
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/tmp/inacademia/start.sh"]
+# ENTRYPOINT ["/bin/bash"]

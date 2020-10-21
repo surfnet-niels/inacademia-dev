@@ -11,6 +11,7 @@ MICRO_SERVICES:
   #- 'plugins/blacklist.yaml'
   - 'plugins/attribute_processor.yaml'
   #- 'plugins/attribute_override.yaml'
+  #- 'plugins/assert_hint.yaml'
   - 'plugins/custom_logging.yaml'
   - 'plugins/user_consent.yaml'
 LOGGING:

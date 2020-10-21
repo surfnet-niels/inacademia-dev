@@ -16,7 +16,7 @@ config:
       - {contact_type: technical, given_name: InAcademia, sur_name: Technical Support, email_address: tech@inacademia.org}
 
     metadata:
-        local: [idp.xml]
+        mdq: ['http://mdq.inacademia.local/']
 
     entityid: 'https://inacademia.local/metadata/inacademia-simple-validation.xml'
     service:
@@ -51,4 +51,4 @@ config:
           privacy_statement_url:
             - {text: 'https://inacademia.org/about/privacy', lang: en}
     name_form: 'urn:oasis:names:tc:SAML:2.0:attrname-format:uri'
-  disco_srv: 'https://md.nordu.net/role/idp.ds'
+  disco_srv: 'http://mdq.inacademia.local/role/idp.ds'

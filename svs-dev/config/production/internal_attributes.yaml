@@ -19,4 +19,6 @@ attributes:
     openid: [country]
   org:
     openid: [institution]
+  idp_used:
+    openid: [idp_hint]
 

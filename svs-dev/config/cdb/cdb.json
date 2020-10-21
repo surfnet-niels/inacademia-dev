@@ -3,7 +3,8 @@
     "allowed_claims": [
       "domain",
       "country",
-      "institution"
+      "institution",
+      "idp_hint"
     ],
     "allowed_scope_values": [
       "member",
@@ -15,7 +16,9 @@
       "persistent",
       "transient"
     ],
-    "response_types": ["id_token"],
+    "response_types": ["id_token", "code"],
+    "client_secret": "secret",
+    "token_endpoint_auth_method": "client_secret_post",
     "client_id": "rp",
     "display_name": "User friendly RP name",
     "logo": "https://cdn.mutually.com/wp-content/uploads/2018/03/n.jpg",

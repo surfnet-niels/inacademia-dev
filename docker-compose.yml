@@ -159,6 +159,7 @@ services:
     build:
       context: ./svs-dev
     image: inacademia-svs-dev:v1
+    stdin_open: true
     extra_hosts:
       - svs.inacademia.local:172.21.10.2
       - op.inacademia.local:172.21.10.3

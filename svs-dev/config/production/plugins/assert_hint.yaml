@@ -1,0 +1,6 @@
+module: svs.assert_hint.AssertHint
+name: AssertHint
+config:
+    internal_attribute: 'idp_used'
+
+

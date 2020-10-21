@@ -3,7 +3,8 @@
     "allowed_claims": [
       "domain",
       "country",
-      "institution"
+      "institution",
+      "idp_hint"
     ],
     "allowed_scope_values": [
       "member",
