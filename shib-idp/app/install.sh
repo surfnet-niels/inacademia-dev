@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This work is based on https://github.com/ConsortiumGARR/idem-tutorials/blob/master/idem-fedops/HOWTO-Shibboleth/Identity%20Provider/Debian-Ubuntu/HOWTO%20Install%20and%20Configure%20a%20Shibboleth%20IdP%20v3.4.x%20on%20Debian-Ubuntu%20Linux%20with%20Apache2%20%2B%20Jetty9.md
-echo "127.0.0.1 idp localhost" >> /etc/hosts
+echo "127.0.0.1 idp3 localhost" >> /etc/hosts
 
 export DEBIAN_FRONTEND=noninteractive
 echo "debconf slapd/password1 password test" | debconf-set-selections
@@ -22,12 +22,12 @@ source /etc/environment
 export JAVA_HOME=/usr/lib/jvm/default-java
 
 # create self signed certs and put them in the right place if needed
-FILE=/etc/ssl/private/idp.inacademia.local.key
+FILE=/etc/ssl/private/idp3.inacademia.local.key
 if [ -f "$FILE" ]; then
     echo "$FILE exist"
 else
     echo "$FILE does not exist, creating"
-    openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/idp.inacademia.local.key -out /etc/ssl/certs/idp.inacademia.local.crt -nodes -days 1095 -subj '/CN=idp.inacademia.local'
+    openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/idp3.inacademia.local.key -out /etc/ssl/certs/idp3.inacademia.local.crt -nodes -days 1095 -subj '/CN=idp3.inacademia.local'
 fi
 
 
@@ -65,7 +65,7 @@ service jetty check
 
 # Installing shibboleth
 cd /usr/local/src
-VERSION=4.0.0
+VERSION=4.0.1
 DIST=shibboleth-identity-provider-$VERSION
 TARGZ=$DIST.tar.gz
 WAR=/opt/shibboleth-idp/war/idp.war
@@ -78,9 +78,9 @@ else
     wget $JSTL -O $DIST/webapp/WEB-INF/lib/jstl-1.2.jar
     #echo "Accept all defaults"
     #eread
-    ./$DIST/bin/install.sh -Didp.target.dir=/opt/shibboleth-idp -Didp.host.name=idp.inacademia.local -Didp.sealer.password=secret \
+    ./$DIST/bin/install.sh -Didp.target.dir=/opt/shibboleth-idp -Didp.host.name=idp3.inacademia.local -Didp.sealer.password=secret \
 	-Didp.keystore.password=secret -Didp.src.dir=/usr/local/src/shibboleth-identity-provider-$VERSION -Didp.scope=inacademia.local \
-	-Didp.noprompt=true -Didp.entityID=https://idp.inacademia.local/idp/shibboleth
+	-Didp.noprompt=true -Didp.entityID=https://idp3.inacademia.local/idp/shibboleth
 
     cd /opt/shibboleth-idp
     chown -R jetty logs/ metadata/ credentials/ conf/ system/ war/
@@ -108,10 +108,10 @@ else
 fi
 
 # Setting up Apache
-mkdir /var/www/html/idp.inacademia.local
-chown -R www-data: /var/www/html/idp.inacademia.local
+mkdir /var/www/html/idp3.inacademia.local
+chown -R www-data: /var/www/html/idp3.inacademia.local
 a2enmod proxy_http ssl headers alias include negotiation
-a2ensite idp.inacademia.local
+a2ensite idp3.inacademia.local
 a2dissite 000-default.conf
 service apache2 restart
 

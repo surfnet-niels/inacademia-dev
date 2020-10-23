@@ -6,10 +6,12 @@ BACKEND_MODULES:
 FRONTEND_MODULES:
   - 'plugins/inacademia_frontend.yaml'
 MICRO_SERVICES:
-#  - 'plugins/custom_alias.yaml'
-#  - 'plugins/blacklist.yaml'
+  - 'plugins/custom_alias.yaml'
+  - 'plugins/metainfo.yaml'
+  #- 'plugins/blacklist.yaml'
   - 'plugins/attribute_processor.yaml'
-#  - 'plugins/metainfo.yaml'
+  #- 'plugins/attribute_override.yaml'
+  #- 'plugins/assert_hint.yaml'
   - 'plugins/custom_logging.yaml'
   - 'plugins/user_consent.yaml'
 LOGGING:
@@ -34,6 +36,15 @@ LOGGING:
       maxBytes: 10485760 # 10MB
       backupCount: 20
       encoding: utf8
+    timed_info_file_handler:
+      class: logging.handlers.TimedRotatingFileHandler
+      level: DEBUG
+      formatter: simple
+      filename: timed_info.log
+      when: 'midnight'
+      utc: true
+      backupCount: 28
+      encoding: utf8
     transaction_flow_file_handler:
       class: logging.handlers.RotatingFileHandler
       level: DEBUG
@@ -45,11 +56,11 @@ LOGGING:
   loggers:
     satosa:
       level: DEBUG
-      handlers: [console]
+      handlers: [console, info_file_handler, timed_info_file_handler]
       propagate: no
     svs:
       level: DEBUG
-      handlers: [console]
+      handlers: [console, info_file_handler, timed_info_file_handler]
       propagate: no
     transaction_flow:
       level: DEBUG
@@ -57,5 +68,4 @@ LOGGING:
       propagate: no
   root:
     level: DEBUG
-    handlers: [info_file_handler]
-
+    handlers: [info_file_handler, timed_info_file_handler]

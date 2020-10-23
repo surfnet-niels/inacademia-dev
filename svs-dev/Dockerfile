@@ -32,5 +32,5 @@ COPY config/cdb/cdb.json.example /etc/cdb/cdb.json
 COPY config/start.sh /tmp/inacademia/start.sh
 COPY config/install.sh /tmp/inacademia/install.sh
 
-ENTRYPOINT ["/tmp/inacademia/start.sh"]
-#ENTRYPOINT /bin/bash
+#ENTRYPOINT ["/tmp/inacademia/start.sh"]
+ENTRYPOINT /bin/bash

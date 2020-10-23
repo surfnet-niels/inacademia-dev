@@ -12,14 +12,22 @@ $metadata['__DYNAMIC:1__'] = array(
 	 * Can be '__DEFAULT__', to use this entry by default.
 	 */
 	'host' => '__DEFAULT__',
-    'RegistrationInfo' => array(
-        'authority' => 'urn:mace:idp.foo.bar'
-        //'authority' => 'https://incommon.org'
-    ),
-
+	'RegistrationInfo' => array(
+        	'authority' => 'urn:mace:idp.foo.barz'
+		//'authority' => 'https://incommon.org'
+	),
+	'OrganizationURL' => 'https://idp1.inacademia.local/',
+	'OrganizationName' => [
+		'en' => 'Test IdP ONE',
+		'nl' => 'Test IdP ONE'
+	],
+	'OrganizationDisplayName' => [
+		'en' => 'Test IdP ONE DisplayName',
+		'nl' => 'Test IdP ONE DisplayName'
+	],
 	// X.509 key and certificate. Relative to the cert directory.
-	'privatekey' => 'idp.inacademia.local.pem',
-	'certificate' => 'idp.inacademia.local.crt',
+	'privatekey' => 'idp1.inacademia.local.pem',
+	'certificate' => 'idp1.inacademia.local.crt',
 
 	/*
 	 * Authentication source to use. Must be one that is configured in

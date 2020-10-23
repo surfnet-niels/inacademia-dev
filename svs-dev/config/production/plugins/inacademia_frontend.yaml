@@ -9,6 +9,7 @@ config:
   sub_hash_salt: PpQCaykfKpQ5zeTm
   provider:
     client_registration_supported: Yes
-    response_types_supported: ["code", "id_token token"]
+    #response_types_supported: ["code", "id_token token"]
     subject_types_supported: ["pairwise"]
     scopes_supported: ["openid", "email","domain","country"]
+    grant_types_supported: ["implicit"]

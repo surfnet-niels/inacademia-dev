@@ -29,7 +29,7 @@ RUN_DIR=$PWD
 CONFIG_DIR="$RUN_DIR/config"
 
 # Remove existing container
-docker rm $CONTAINER_NAME || echo "$CONTAINER_NAME not found"
+docker rm $CONTAINER_NAME || echo "$CONTAINER_NAME not found, can't remove"
 
 # Create SVS
 docker create -it \
@@ -44,12 +44,15 @@ docker create -it \
     -v $PWD/workdir:/opt/workdir \
     -e DATA_DIR=/var/svs \
     -w /var/svs \
-    --net inacademia.local \
-    --ip 172.172.172.1 \
-    --add-host=svs.inacademia.local:172.172.172.1 \
-    --add-host=op.inacademia.local:172.172.172.2 \
-    --add-host=rp.inacademia.local:172.172.172.100 \
-    --add-host=idp.inacademia.local:172.172.172.200 \
+    --net inacademia-dev_inacademia \
+    --ip 172.21.10.2 \
+    --add-host=svs.inacademia.local:172.21.10.2 \
+    --add-host=op.inacademia.local:172.21.10.3 \
+    --add-host=mdq.inacademia.local:172.21.10.4 \
+    --add-host=rp.inacademia.local:172.21.10.100 \
+    --add-host=idp1.inacademia.local:172.21.10.201 \
+    --add-host=idp2.inacademia.local:172.21.10.202 \
+    --add-host=idp3.inacademia.local:172.21.10.203 \
     --hostname svs.inacademia.local \
     --expose 80 \
     --expose 443 \

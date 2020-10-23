@@ -1,6 +1,7 @@
 module: svs.user_consent.UserConsent
 name: Consent
 config:
+  privacy_url: "https://inacademia.org/privacy-and-data-protection/"
   logo_base_path: "/var/svs/logos"
   log_target: '/var/svs/consent.log'
   attributes:
