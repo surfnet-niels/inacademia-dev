@@ -9,7 +9,7 @@ RUN echo "SVS:" $SVS_VERSION
 
 # Timezone must be set befor generic updates of we will get a prompt to select the timezone interactively
 RUN apt -y update
-RUN ln -fs /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
+RUN ln -fs /usr/share/zoneinfo/UTC /etc/localtime
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 
 # Now run updates and install requred software

@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 MAINTAINER InAcademia Team, tech@inacademia.org
 
 RUN apt -y update
-RUN ln -fs /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
+RUN ln -fs /usr/share/zoneinfo/UTC /etc/localtime
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 
 RUN apt-get install -y --no-install-recommends \
