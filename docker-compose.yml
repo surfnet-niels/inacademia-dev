@@ -92,10 +92,36 @@ services:
       - idp3.inacademia.local:172.21.10.203
     hostname: op.inacademia.local
     volumes:
-      - ./${POUND_SSL_DIR}:/etc/ssl
+      - ./${NGINX_SSL_DIR}:/etc/ssl
+      - ./${NGINX_CONFIG_DIR}:/etc/nginx
+      - ./${NGINX_STATIC_DIR}:/var/www/html
     environment:
       BACKEND_PORT: tcp://172.21.10.2:80
       REWRITE_LOCATION: 1
+    expose:
+      - 80
+      - 443
+    networks:
+      inacademia:
+        ipv4_address: 172.21.10.3
+
+  nginx:
+    build:
+      context: ./nginx
+    image: inacademia-nginx:v1
+    extra_hosts:
+      - svs.inacademia.local:172.21.10.2
+      - op.inacademia.local:172.21.10.3
+      - mdq.inacademia.local:172.21.10.4
+      - rp.inacademia.local:172.21.10.100
+      - idp1.inacademia.local:172.21.10.201
+      - idp2.inacademia.local:172.21.10.202
+      - idp3.inacademia.local:172.21.10.203
+    hostname: op.inacademia.local
+    volumes:
+      - ./${NGINX_SSL_DIR}:/etc/ssl
+      - ./${NGINX_CONFIG_DIR}:/etc/nginx
+      - ./${NGINX_STATIC_DIR}:/var/www/html
     expose:
       - 80
       - 443
@@ -185,7 +211,7 @@ services:
       SATOSA_USER_ID_HASH_SALT: ${SATOSA_SALT}
     working_dir: /var/svs
     depends_on:
-      - "op"
+      - "nginx"
       - "rp"
       - "mdq"
     expose:
@@ -224,7 +250,7 @@ services:
       SATOSA_USER_ID_HASH_SALT: ${SATOSA_SALT}
     working_dir: /var/svs
     depends_on:
-      - "op"
+      - "nginx"
       - "rp"
       - "mdq"
     expose:
