@@ -92,9 +92,7 @@ services:
       - idp3.inacademia.local:172.21.10.203
     hostname: op.inacademia.local
     volumes:
-      - ./${NGINX_SSL_DIR}:/etc/ssl
-      - ./${NGINX_CONFIG_DIR}:/etc/nginx
-      - ./${NGINX_STATIC_DIR}:/var/www/html
+      - ./${POUND_SSL_DIR}:/etc/ssl
     environment:
       BACKEND_PORT: tcp://172.21.10.2:80
       REWRITE_LOCATION: 1
