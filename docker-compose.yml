@@ -120,7 +120,7 @@ services:
     hostname: op.inacademia.local
     volumes:
       - ./${NGINX_SSL_DIR}:/etc/ssl
-      - ./${NGINX_CONFIG_DIR}:/etc/nginx
+      - ./${NGINX_CONFIG}:/etc/nginx/nginx.conf
       - ./${NGINX_STATIC_DIR}:/var/www/html
     expose:
       - 80

@@ -110,3 +110,6 @@ venv.bak/
 .project
 .pydevproject
 .settings
+
+# static mdx dir
+nginx/config/static/mdx
